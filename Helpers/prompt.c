@@ -1,5 +1,6 @@
-// #include "../Headers/prompt.h"
+
 #include "../Headers/headers.h"
+#include "../Headers/sizes.h"
 #include <unistd.h>
 #include <pwd.h>
 #include <string.h>
@@ -8,8 +9,8 @@
 
 void promptUser()
 {
-    char prompt[1000];
-    char hostname[1000];
+    char prompt[MAX_PATH_SIZE];
+    char hostname[MAX_PATH_SIZE];
 
     struct passwd *p = getpwuid(getuid()); // Check for NULL!
     
