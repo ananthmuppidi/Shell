@@ -1,25 +1,18 @@
 #include "Headers/prompt.h"
-#include "Headers/currDir.h"
+#include "Headers/dir.h"
 #include "Headers/sizes.h"
 #include <stdio.h>
 
 int main()
 {
-    char arr[MAX_PATH_SIZE];
-    getShellRoot(arr);
+    char shellRootPath[MAX_PATH_SIZE];
+    getShellRoot(shellRootPath);
 
+    char arr2[MAX_PATH_SIZE];
 
-    // while (1)
-    // {
-    //     // promptUser();
-    //     // char a[20];
-    //     // scanf("%s", a);
-    //     // // TAKE INPUT HERE
-    printf("%s\n", arr);
-        
-
-
-    // }
+    
+        promptUser(shellRootPath);
+    
 
     
 }
