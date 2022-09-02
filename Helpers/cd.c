@@ -22,6 +22,8 @@ void changeDirectory(char path[], char shellRootPath[]){
     printf("\n %d  \n", chDirReturn);
     if(chDirReturn == -1){
         fprintf(stderr, "cd: %s: %s\n", strerror(errno), path) ;
+        // error handling
+
 
     }
   
