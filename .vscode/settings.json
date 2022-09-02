@@ -30,6 +30,7 @@
   ],
   "files.associations": {
     "prompt.h": "c",
-    "headers.h": "c"
+    "headers.h": "c",
+    "sizes.h": "c"
   }
 }

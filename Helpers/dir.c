@@ -9,19 +9,15 @@ void getShellRoot(char buffer[]){
     strcpy(buffer, shellRootPath);
 }
 
-
-void getCurrDir(char buffer[], char shellRootPath[]){
-
-    
-    strcpy(buffer, "~");
+int getCurrDir(char buffer[], char shellRootPath[]){
 
     char absoluteTempPath[MAX_PATH_SIZE];
     getcwd(absoluteTempPath, MAX_PATH_SIZE);
 
-    int isEqual = !strcmp(shellRootPath, absoluteTempPath);
+    int isEqual = strcmp(shellRootPath, absoluteTempPath);
 
-    if(isEqual){
-        return;
+    if(!isEqual){
+        return 0; // the strings are equal th==
     }
 
     int idx = 0;

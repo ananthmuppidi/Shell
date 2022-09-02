@@ -6,9 +6,8 @@
 /// @param buffer Char array where the path must be stored.
 void getShellRoot(char buffer[]);
 
-
-/// @brief Returns the path relative to where the shell is started.
+/// @brief Prints into buffer the path relative to where the shell is started (if the path is deeper than the shell root) or the absolute path (if it is the current ) . Returns wether the path provided is smaller than root, equal to root, or greater than root.
 /// @param buffer Char array where the path must be stored. @param shellRootPath The absolute path to the root of the shell
-void getCurrDir(char buffer[], char shellRootPath[]);
+int getCurrDir(char buffer[], char shellRootPath[]);
 
 #endif
