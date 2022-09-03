@@ -29,7 +29,7 @@ void changeDirectory(char path[], char shellRootPath[])
 
         return;
     }
-
+ 
     char tempArray[MAX_PATH_SIZE];
 
     printf("%s\n", currentAbsoluteDir);

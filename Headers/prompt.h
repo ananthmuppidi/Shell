@@ -2,8 +2,8 @@
 #define __PROMPT_H__
 
 
-/// @brief Prints the shell prompt.
-/// @param shellRootPath Absolute path of the shell.
+/// @breif Prints the prompt for the user
+/// @param shellRootPath It is the path of the shell where it is initialized.
 void promptUser(char shellRootPath[]);
 
 #endif
