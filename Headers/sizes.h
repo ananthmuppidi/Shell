@@ -7,6 +7,9 @@
 /// @brief This is the max size that any user name string can be.
 #define MAX_USERNAME_SIZE 1000
 
+/// @brief This is the max size of a command in the terminal.
+#define MAX_COMMAND_SIZE 10000
+
 
 
 

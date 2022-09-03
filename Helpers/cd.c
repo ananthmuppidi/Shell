@@ -6,32 +6,41 @@
 #include <stdio.h>
 #include <errno.h>
 
-
-void changeDirectory(char path[], char shellRootPath[]){
+void changeDirectory(char path[], char shellRootPath[])
+{
 
     int chDirReturn = 0;
-
     char currentAbsoluteDir[MAX_PATH_SIZE];
-    char tempArrau[MAX_PATH_SIZE];
+
     getcwd(currentAbsoluteDir, MAX_PATH_SIZE);
 
-    printf("%s\n", currentAbsoluteDir);
-    printf("HERE\n\n\n");
+    // branching based on wether the path is absolute
 
-    strcat(currentAbsoluteDir, "/../../../../../../../../../../../../asdf");
+    if (path[0] == '/')
+    {
+        // absolute path detected
+
+        chDirReturn = chdir(path);
+
+        if (chDirReturn == -1)
+        {
+            fprintf(stderr, "cd: %s: %s\n", strerror(errno), path);
+        }
+
+        return;
+    }
+
+    char tempArray[MAX_PATH_SIZE];
+
+    printf("%s\n", currentAbsoluteDir);
+
+
+    strcat(currentAbsoluteDir, path);
 
     chDirReturn = chdir(currentAbsoluteDir);
-    printf("\n %d  \n", chDirReturn);
-    if(chDirReturn == -1){
-        fprintf(stderr, "cd: %s: %s\n", strerror(errno), path) ;
-        // error handling 
-
-
+    if (chDirReturn == -1)
+    {
+        fprintf(stderr, "cd: %s: %s\n", strerror(errno), path);
+        // error handling
     }
-  
-
-
-
-
-
 }

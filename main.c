@@ -7,17 +7,17 @@
 
 int main()
 {
-    char shellRootPath[MAX_PATH_SIZE];
-    getShellRoot(shellRootPath);
 
-    char arr2[MAX_PATH_SIZE];
+  char shellRootPath[MAX_PATH_SIZE];
+  char input[MAX_COMMAND_SIZE];
 
-    promptUser(shellRootPath);  
-    changeDirectory("THISISTHEARG", "");
+  getShellRoot(shellRootPath);
 
-    char currentAbsoluteDirTest[MAX_PATH_SIZE];
 
-      getcwd(currentAbsoluteDirTest, MAX_PATH_SIZE);
+  promptUser(shellRootPath);
+  getInput();
+  tokenizeInput();
+  
 
-    printf("\n%s\n", currentAbsoluteDirTest);
+  
 }
