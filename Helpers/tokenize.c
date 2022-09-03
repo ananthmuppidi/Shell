@@ -11,7 +11,7 @@ char* tokenizeAnd(char* input, char** output){
     return entryPoint;
 }
 
-char*  tokenizeSpace(char* input, char** output){
+char* tokenizeSpace(char* input, char** output){
     char* entryPoint = strtok(input, " ");
     return entryPoint;
 }

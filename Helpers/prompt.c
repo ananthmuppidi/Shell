@@ -16,7 +16,7 @@ void promptUser(char shellRootPath[])
     struct passwd *p = getpwuid(getuid()); // Check for NULL!
     gethostname(hostname, sizeof(hostname)); // Check the return value!
 
-    getCurrDir(currDir, shellRootPath);
+    getPromptCurrDir(currDir, shellRootPath);
 
     
     for(int i = 0; i < 1000; i++) prompt[i] = '\0';

@@ -15,8 +15,9 @@ int main()
 
 
   promptUser(shellRootPath);
-  getInput();
-  tokenizeInput();
+  
+  // getInput();
+  // tokenizeInput();
   
 
   

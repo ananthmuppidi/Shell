@@ -1,2 +1,2 @@
 main:
-	gcc -g main.c prompt.c
+	gcc  main.c Helpers/*.c
