@@ -10,13 +10,13 @@ void getShellRoot(char buffer[])
     strcpy(buffer, shellRootPath);
 }
 
-int getCurrDir(char buffer[])
+void getCurrDir(char buffer[])
 {
     char absoluteTempPath[MAX_PATH_SIZE];
     getcwd(absoluteTempPath, MAX_PATH_SIZE);
 }
 
-int getPromptCurrDir(char buffer[], char shellRootPath[])
+void getPromptCurrDir(char buffer[], char shellRootPath[])
 {
 
     char absoluteTempPath[MAX_PATH_SIZE];
@@ -26,7 +26,7 @@ int getPromptCurrDir(char buffer[], char shellRootPath[])
     if (!isEqual)
     {
         strcpy(buffer, "~");
-        return 0; // the strings are equal then return home -> ~
+        return; // the strings are equal then return home -> ~
     }
 
     if (isEqual < 0)
@@ -39,12 +39,12 @@ int getPromptCurrDir(char buffer[], char shellRootPath[])
         while (absoluteTempPath[idx] != '\0')
             buffer[i++] = absoluteTempPath[idx++];
 
-        return 0;
+        return;
     }
 
     if (isEqual > 0)
     {
         strcpy(buffer, absoluteTempPath);
-        return 0;
+        return;
     }
 }

@@ -1,24 +1,26 @@
-#ifndef __TOKENIZER_H_
-#define __TOKENIZER_H_
+#ifndef TOKENIZER_H
+#define TOKENIZER_H
 
 #include "sizes.h"
 
-/// @brief Tokenized commands delemited by space.
-/// @param input The input read from the command line.
-/// @param output The output is a array of tokenized commands delimited by " ".
-/// @return Returns character pointer to the first command.
-char* tokenizeSpace(char* input, char** output);
 
-/// @brief Tokenized commands delemited by &.
-/// @param input The input read from the command line.
-/// @param output The output is a array of tokenized commands delimited by "&".
-/// @return Returns character pointer to the first command.
-char* tokensizeAnd(char* input, char** output);
+/// @breif Tokenizes given input string based on delimiter space
+/// @param input The input string
+/// @param output A 2 dimensional array of tokens
+/// @return Returns the number of tokens
 
-/// @brief Tokenized commands delemited by ;.
-/// @param input The input read from the command line.
-/// @param output The output is a array of tokenized commands delimited by ";".
-/// @return Returns character pointer to the first command.
-char* tokenizeSemiColon(char* input, char** output);
+int tokenizeSemiColon(char input[], char output[][MAX_TOKEN_SIZE]);
+
+/// @breif Tokenizes given input string based on delimiter &
+/// @param input The input string
+/// @param output A 2 dimensional array of tokens
+/// @return Returns the number of tokens
+int tokenizeAnd(char input[], char output[][MAX_TOKEN_SIZE]);
+
+/// @breif Tokenizes given input string and returns an array of executable commands, with flags delimited by space(s). Background commands have the & symbol appended to the last token (delimited by space).
+/// @param input The input string
+/// @param output A 2 dimensional array of tokens
+/// @return Returns the number of tokens
+int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]);
 
 #endif

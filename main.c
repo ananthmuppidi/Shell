@@ -3,26 +3,35 @@
 #include "Headers/sizes.h"
 #include "Headers/cd.h"
 #include "Headers/input.h"
+#include "Headers/tokenizer.h"
+#include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 
-int main()
-{
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 
-  char shellRootPath[MAX_PATH_SIZE];
+int main() {
 
+    char shellRootPath[MAX_PATH_SIZE];
+    getShellRoot(shellRootPath);
 
-  getShellRoot(shellRootPath);
+    while (1) {
 
-  while(1) {
+        char input[MAX_COMMAND_SIZE];
 
-      char inputTokens[10][MAX_COMMAND_SIZE];
-      promptUser(shellRootPath);
-      getInput(inputTokens);
-      printf("%s", inputTokens[0]);
+        char tokenizedInput[MAX_TOKENS][MAX_TOKEN_SIZE];
+        int tokens;
 
-      // tokenizeInput();
+        char semiColonTokens[MAX_TOKENS][MAX_TOKEN_SIZE];
+        char finalTokens[MAX_TOKENS][MAX_TOKEN_SIZE];
 
+        promptUser(shellRootPath);
+        getInput(input);
 
-  }
+        tokens = tokenizeInput(input, tokenizedInput);
+
+    }
 }
+
+#pragma clang diagnostic pop

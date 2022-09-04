@@ -4,11 +4,11 @@
 #include <stdio.h>
 
 
-void getInput(char buffer[][MAX_PATH_SIZE]){
+void getInput(char buffer[]){
 
     char inputString[MAX_COMMAND_SIZE];
     fgets(inputString, MAX_COMMAND_SIZE, stdin);
-
     inputString[strcspn(inputString, "\n")] = 0;
-    strcpy(buffer[0], inputString);
+    strcpy(buffer, inputString);
+
 }

@@ -1,2 +1,2 @@
 all:
-	gcc  main.c Helpers/*.c
+	gcc  main.c Controllers/*.c
