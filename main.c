@@ -32,7 +32,7 @@ int main() {
         tokens = tokenizeInput(input, tokenizedInput);
 
         for(int i = 0; i < tokens; i++){
-            execute(tokenizedInput[i]);
+            execute(tokenizedInput[i], shellRootPath);
         }
 
     }

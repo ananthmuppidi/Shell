@@ -23,4 +23,11 @@ int tokenizeAnd(char input[], char output[][MAX_TOKEN_SIZE]);
 /// @return Returns the number of tokens
 int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]);
 
+
+/// @breif Tokenizes given input string and returns an an array of strings delemited by the " ". This is to split a command with its options and arguments.
+/// @param input The input string
+/// @param output A 2 dimensional array of tokens
+/// @return Returns the number of tokens
+int tokenizeSpace(char input[], char output[][MAX_TOKEN_SIZE]);
+
 #endif

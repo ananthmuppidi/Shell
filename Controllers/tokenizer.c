@@ -3,6 +3,27 @@
 #include "../Headers/sizes.h"
 #include <stdio.h>
 
+
+int tokenizeSpace(char input[], char output[][MAX_TOKEN_SIZE]) {
+
+    char *delimiter = " \t";
+    char *token;
+
+    int idx = 0;
+    int tokenCount = 0;
+
+    token = strtok(input, delimiter);
+    while (token != NULL) {
+        tokenCount++;
+        strcpy(output[idx++], token);
+//        printf("\033[0;36m");
+//        printf("%d:%s   ", tokenCount ,token);
+//        printf("\033[0m");
+        token = strtok(NULL, delimiter);
+    }
+    return tokenCount;
+}
+
 int tokenizeSemiColon(char input[], char output[][MAX_TOKEN_SIZE]) {
 
     char *delimiter = ";";
@@ -53,7 +74,8 @@ int tokenizeAnd(char input[], char output[][MAX_TOKEN_SIZE]) {
     // This section appends the & symbol to all the tokens, depending on how many & symbols were found
     int symbolAppendCount = 0; // To store which token the symbol is being appended to
     while (symbolCount--) {
-        strcat(output[symbolAppendCount++], " &"); // with space so that it gets detected later during command tokenization
+        strcat(output[symbolAppendCount++],
+               " &"); // with space so that it gets detected later during command tokenization
     }
     return tokenCount;
 }
@@ -77,12 +99,12 @@ int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]) {
             idx++;
         }
     }
-
-    for (int i = 0; i < idx; i++) {
-        printf("\033[0;36m");
-        printf("%d:%s\n", (i + 1), output[i]);
-        printf("\033[0m");
-    }
+//
+//    for (int i = 0; i < idx; i++) {
+//        printf("\033[0;36m");
+//        printf("%d:%s\n", (i + 1), output[i]);
+//        printf("\033[0m");
+//    }
 
 
     return idx;
