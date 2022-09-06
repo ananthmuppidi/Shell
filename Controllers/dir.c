@@ -12,8 +12,7 @@ void getShellRoot(char buffer[])
 
 void getCurrDir(char buffer[])
 {
-    char absoluteTempPath[MAX_PATH_SIZE];
-    getcwd(absoluteTempPath, MAX_PATH_SIZE);
+    getcwd(buffer, MAX_PATH_SIZE);
 }
 
 void getPromptCurrDir(char buffer[], char shellRootPath[])

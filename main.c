@@ -4,6 +4,7 @@
 #include "Headers/cd.h"
 #include "Headers/input.h"
 #include "Headers/tokenizer.h"
+#include "Headers/execute.h"
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -28,10 +29,14 @@ int main() {
 
         promptUser(shellRootPath);
         getInput(input);
-
         tokens = tokenizeInput(input, tokenizedInput);
+
+        for(int i = 0; i < tokens; i++){
+            execute(tokenizedInput[i]);
+        }
 
     }
 }
+
 
 #pragma clang diagnostic pop
