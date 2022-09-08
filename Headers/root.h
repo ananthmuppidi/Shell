@@ -6,5 +6,6 @@
 #include "cd.h"
 #include "dir.h"
 #include "pwd.h"
+#include "ls.h"
 
 #endif

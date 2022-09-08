@@ -3,47 +3,70 @@
 #include <unistd.h>
 #include <string.h>
 
-void getShellRoot(char buffer[])
-{
+void getShellRoot(char buffer[]) {
     char shellRootPath[MAX_PATH_SIZE];
     getcwd(shellRootPath, MAX_PATH_SIZE);
     strcpy(buffer, shellRootPath);
 }
 
-void getCurrDir(char buffer[])
-{
+void getCurrDir(char buffer[]) {
     getcwd(buffer, MAX_PATH_SIZE);
 }
 
-void getPromptCurrDir(char buffer[], char shellRootPath[])
-{
+void getPromptCurrDir(char buffer[], char shellRootPath[]) {
 
     char absoluteTempPath[MAX_PATH_SIZE];
     getcwd(absoluteTempPath, MAX_PATH_SIZE);
 
     int isEqual = strcmp(shellRootPath, absoluteTempPath);
-    if (!isEqual)
-    {
+    if (!isEqual) {
         strcpy(buffer, "~");
         return; // the strings are equal then return home -> ~
     }
 
-    if (isEqual < 0)
-    { // actual Path is subdirectory of root
-        int idx = 0;
-        int i = 1;
+    if (isEqual < 0) { // actual Path is subdirectory of root
+        if (strstr(absoluteTempPath, shellRootPath)) {
 
-        while (shellRootPath[idx] == absoluteTempPath[idx])
-            idx++;
-        while (absoluteTempPath[idx] != '\0')
-            buffer[i++] = absoluteTempPath[idx++];
+            int idx = 0;
+            int i = 1;
 
-        return;
+            while (shellRootPath[idx] == absoluteTempPath[idx])
+                idx++;
+            while (absoluteTempPath[idx] != '\0')
+                buffer[i++] = absoluteTempPath[idx++];
+
+            buffer[i] = '\0';
+            return;
+        }
     }
 
-    if (isEqual > 0)
-    {
-        strcpy(buffer, absoluteTempPath);
-        return;
-    }
+    strcpy(buffer, absoluteTempPath);
+    return;
+
 }
+
+void getAbsolutePath(char arg[], char buffer[], char shellRootPath[]) {
+    if (arg[0] == '/') {
+        strcpy(buffer, arg);
+        return;
+    }
+    if (arg[0] == '~') {
+        strcpy(buffer, shellRootPath);
+        if (arg[1] == '/') {
+            int idx = 2;
+            while (arg[idx] != '\0') {
+                strcat(buffer, &arg[idx++]);
+            }
+        }
+        return;
+    } else {
+        char cwd[MAX_PATH_SIZE];
+        getCurrDir(cwd);
+        strcat(cwd, "/");
+        strcat(cwd, arg);
+        strcpy(buffer, cwd);
+        return;
+    }
+
+}
+

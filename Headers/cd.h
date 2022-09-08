@@ -6,5 +6,4 @@
 /// @param shellRootPath Where the shell is intialized
 void changeDirectory(char path[], char shellRootPath[]);
 
-
 #endif

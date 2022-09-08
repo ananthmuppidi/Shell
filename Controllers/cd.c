@@ -8,29 +8,10 @@
 
 void changeDirectory(char path[], char shellRootPath[]) {
     int chDirReturn = 0;
-    char currentAbsoluteDir[MAX_PATH_SIZE];
+    char absoluteDir[MAX_PATH_SIZE];
 
-    getcwd(currentAbsoluteDir, MAX_PATH_SIZE);
-
-    // branching based on weather the path is absolute
-    if (path[0] == '/') {
-        // absolute path detected
-
-        chDirReturn = chdir(path);
-
-        if (chDirReturn == -1) {
-            fprintf(stderr, "cd: %s: %s\n", strerror(errno), path);
-        }
-
-        return;
-    }
-
-    char tempArray[MAX_PATH_SIZE];
-
-    strcat(currentAbsoluteDir, "/");
-    strcat(currentAbsoluteDir, path);
-
-    chDirReturn = chdir(currentAbsoluteDir);
+    getAbsolutePath(path, absoluteDir, shellRootPath);
+    chDirReturn = chdir(absoluteDir);
     if (chDirReturn == -1) {
         fprintf(stderr, "cd: %s: %s\n", strerror(errno), path);
         // error handling
