@@ -7,5 +7,6 @@
 #include "dir.h"
 #include "pwd.h"
 #include "ls.h"
+#include "echo.h"
 
 #endif

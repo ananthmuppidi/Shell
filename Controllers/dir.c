@@ -2,6 +2,7 @@
 #include "../Headers/sizes.h"
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
 
 void getShellRoot(char buffer[]) {
     char shellRootPath[MAX_PATH_SIZE];
@@ -53,10 +54,13 @@ void getAbsolutePath(char arg[], char buffer[], char shellRootPath[]) {
     if (arg[0] == '~') {
         strcpy(buffer, shellRootPath);
         if (arg[1] == '/') {
+            strcat(buffer, "/");
             int idx = 2;
+            int bufferIdx = strlen(buffer);
             while (arg[idx] != '\0') {
-                strcat(buffer, &arg[idx++]);
+                buffer[bufferIdx++] = arg[idx++];
             }
+            buffer[bufferIdx] = '\0';
         }
         return;
     } else {

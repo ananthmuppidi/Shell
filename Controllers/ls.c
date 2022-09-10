@@ -177,6 +177,9 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
 }
 
 void printLs(char path[], int a, int l, int printName) {
+
+
+
     if (l == 0) {
         DIR *dp;
         dp = opendir(path);
@@ -187,8 +190,7 @@ void printLs(char path[], int a, int l, int printName) {
             perror(err);
             return;
         }
-
-        if (printName) {
+        if (printName == 1) {
             char pathCopy[MAX_PATH_SIZE];
             strcpy(pathCopy, path);
             char *baseName;
@@ -238,8 +240,18 @@ void printLs(char path[], int a, int l, int printName) {
         dp = opendir(path);
 
         if (!dp) {
-            perror(path);
+            char err[MAX_PATH_SIZE];
+            sprintf(err, "ls : %s", basename(path));
+            perror(err);
             return;
+        }
+
+        if (printName == 1) {
+            char pathCopy[MAX_PATH_SIZE];
+            strcpy(pathCopy, path);
+            char *baseName;
+            baseName = basename(pathCopy);
+            printf("%s:\n", baseName);
         }
 
         struct dirent **ep;
@@ -250,9 +262,9 @@ void printLs(char path[], int a, int l, int printName) {
             perror("scandir");
             return;
         }
-
+        char fullPath[MAX_PATH_SIZE];
         for (int i = 0; i < n; i++) {
-            char fullPath[MAX_PATH_SIZE];
+
             strcpy(fullPath, path);
 
             if (fullPath[strlen(fullPath) - 1] != '/') {
@@ -266,7 +278,7 @@ void printLs(char path[], int a, int l, int printName) {
             if (stat(fullPath, &stats) == -1) {
                 continue;
             }
-            total += (stats.st_blocks*512+1023)/1024;
+            total += (stats.st_blocks * 512 + 1023) / 1024;
             if (!(ep[i]->d_name[0] == '.' && !a)) {
 
                 hardLinks = max(hardLinks, countDigits(stats.st_nlink));

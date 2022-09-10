@@ -15,26 +15,26 @@ int execute(char* command, char shellRootPath[]){
     char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE];
     int tokens = tokenizeSpace(command, tokenizedCommand);
 
-
-    if(!strcmp(tokenizedCommand[0], "pwd")){
+    if(!strcasecmp(tokenizedCommand[0], "pwd")){
         printPwd();
     }
 
-    if(!strcmp(tokenizedCommand[0], "cd")){
+    if(!strcasecmp(tokenizedCommand[0], "cd")){
         if(tokens > 2){
             printf("cd : string not in pwd: %s\n", tokenizedCommand[1]);
             return 0;
         }
-
         changeDirectory(tokenizedCommand[1], shellRootPath);
     }
 
-    if(!strcmp(tokenizedCommand[0], "clear")){
+    if(!strcasecmp(tokenizedCommand[0], "clear")){
         printf("\033[H\033[J");
     }
-
-    if(!strcmp(tokenizedCommand[0], "ls")){
+    if(!strcasecmp(tokenizedCommand[0], "ls")){
         ls(commandCopy, shellRootPath);
+    }
+    if(!strcasecmp(tokenizedCommand[0], "echo")){
+        echo(commandCopy);
     }
     return 0;
 }
