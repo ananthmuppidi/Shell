@@ -179,7 +179,6 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
 void printLs(char path[], int a, int l, int printName) {
 
 
-
     if (l == 0) {
         DIR *dp;
         dp = opendir(path);
@@ -306,7 +305,6 @@ void ls(char args[], char shellRootPath[]) {
 
     int tokens;
 
-
     char tokenizedInput[MAX_TOKENS][MAX_TOKEN_SIZE];
     tokens = tokenizeSpace(args, tokenizedInput);
 
@@ -352,10 +350,12 @@ void ls(char args[], char shellRootPath[]) {
                 char absPath[MAX_PATH_SIZE];
                 getAbsolutePath(tokenizedInput[i], absPath, shellRootPath);
                 printLs(absPath, a, l, 1);
+
             }
         }
 
     }
+
 }
 
 

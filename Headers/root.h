@@ -8,5 +8,6 @@
 #include "pwd.h"
 #include "ls.h"
 #include "echo.h"
+#include "discover.h"
 
 #endif
