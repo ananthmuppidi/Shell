@@ -22,6 +22,7 @@
 // cd -
 // colour coding only colours the name and not the permissions
 // Options alwats resolce from anywhere and are applied to all the files
+// HANDLE GAY SHIT -> if file print file
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"      /* Red */

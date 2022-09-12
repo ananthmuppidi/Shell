@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <errno.h>
 
+// handle cd -
+
 void changeDirectory(char path[], char shellRootPath[]) {
     int chDirReturn = 0;
     char absoluteDir[MAX_PATH_SIZE];

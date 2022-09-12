@@ -16,6 +16,7 @@
 #include "../Headers/discover.h"
 
 // ASSUMES THAT THE TARGET (the entity being searched for) IS ALWAYS A FILE
+// PRINT THE SEARCH DIR (only when either -d or no flag)
 
 int getFlagsDiscover(char input[], int *f, int *d) {
 
