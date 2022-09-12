@@ -4,15 +4,19 @@
 #include "Headers/input.h"
 #include "Headers/tokenizer.h"
 #include "Headers/execute.h"
-
+#include "Headers/history.h"
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "EndlessLoop"
 
 int main() {
 
+
+
     char shellRootPath[MAX_PATH_SIZE];
     getShellRoot(shellRootPath);
+
+    makeHistoryFile(shellRootPath);
 
     while (1) {
 
@@ -24,7 +28,7 @@ int main() {
         char finalTokens[MAX_TOKENS][MAX_TOKEN_SIZE];
 
         promptUser(shellRootPath);
-        getInput(input);
+        getInput(input, shellRootPath);
         tokens = tokenizeInput(input, tokenizedInput);
         for(int i = 0; i < tokens; i++) execute(tokenizedInput[i], shellRootPath);
 

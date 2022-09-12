@@ -9,5 +9,7 @@
 #include "ls.h"
 #include "echo.h"
 #include "discover.h"
+#include "history.h"
+#include "executeForeground.h"
 
 #endif

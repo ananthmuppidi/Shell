@@ -99,7 +99,7 @@ int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]) {
             idx++;
         }
     }
-//
+
 //    for (int i = 0; i < idx; i++) {
 //        printf("\033[0;36m");
 //        printf("%d:%s\n", (i + 1), output[i]);

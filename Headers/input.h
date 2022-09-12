@@ -5,6 +5,6 @@
 
 /// @breif Gets input from the shell and tokenizes it. Appends &(background process) to the command.
 /// @param buffer Where the input is stored
-void getInput(char buffer[]);
+void getInput(char buffer[], char shellRootPath[]);
 
 #endif
