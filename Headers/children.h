@@ -1,0 +1,11 @@
+
+
+#ifndef INC_2021101122_ASSIGNMENT2_CHILDREN_H
+#define INC_2021101122_ASSIGNMENT2_CHILDREN_H
+
+#include "job.h"
+#include "sizes.h"
+
+job jobPool[MAX_JOBS];
+
+#endif //INC_2021101122_ASSIGNMENT2_CHILDREN_H

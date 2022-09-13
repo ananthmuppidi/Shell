@@ -1,0 +1,10 @@
+//
+// Created by Ananth Muppidi on 13/09/22.
+//
+
+#ifndef INC_2021101122_ASSIGNMENT2_TIMETAKEN_H
+#define INC_2021101122_ASSIGNMENT2_TIMETAKEN_H
+
+double timeTaken;
+
+#endif //INC_2021101122_ASSIGNMENT2_TIMETAKEN_H

@@ -4,6 +4,8 @@
 #include "../Headers/root.h"
 #include "../Headers/tokenizer.h"
 #include <stdio.h>
+#include "../Headers/previousDir.h"
+#include "../Headers/dir.h"
 
 // ADD ERRORS FOR NO REASON
 
@@ -34,15 +36,16 @@ int checkBackground(char command[]) {
             strcat(reconstructedCommand, " ");
         }
         strcpy(command, reconstructedCommand);
+
         return 1; // returns 1 when & was detected
     }
     strcpy(command, commandCopy);
+
     return 0;
 }
 
-int execute(char *command, char shellRootPath[]) {
+int execute(char *command, char shellRootPath[], job jobPool[]) {
     // TO DO: add tokenization for the input to detect foreground and background processes
-//    printf("%s\n", command);
     char commandCopy[MAX_COMMAND_SIZE];
     strcpy(commandCopy,
            command); // stores a copy of the command since it gets tokenized and the intitial command array gets destroyed
@@ -57,7 +60,22 @@ int execute(char *command, char shellRootPath[]) {
             printf("cd : string not in pwd: %s\n", tokenizedCommand[1]);
             return 0;
         }
-        changeDirectory(tokenizedCommand[1], shellRootPath);
+
+        if (tokenizedCommand[1][0] == '-') {
+            if(!strcasecmp(previousDirectory, "")){
+                printf("No previous directory\n");
+                return 0;
+            }
+            char currDir[MAX_PATH_SIZE];
+            getCurrDir(currDir);
+            changeDirectory(previousDirectory, shellRootPath);
+            strcpy(previousDirectory, currDir);
+        } else {
+            char currDir[MAX_PATH_SIZE];
+            getCurrDir(currDir);
+            strcpy(previousDirectory, currDir);
+            changeDirectory(tokenizedCommand[1], shellRootPath);
+        }
     } else if (!strcasecmp(tokenizedCommand[0], "clear")) {
         printf("\033[H\033[J");
     } else if (!strcasecmp(tokenizedCommand[0], "ls")) {
@@ -70,18 +88,18 @@ int execute(char *command, char shellRootPath[]) {
         printHistory(commandCopy, shellRootPath);
     } else {
         if (checkBackground(commandCopy)) {
-
-        } else {
-//            printf("%s\n", commandCopy);
             char tokenizedCommandWithoutAnd[MAX_TOKENS][MAX_TOKEN_SIZE];
             int tokens2 = tokenizeSpace(commandCopy, tokenizedCommandWithoutAnd);
-//            for (int i = 0; i < tokens2; i++) {
-//                printf("\033[0;36m");
-//                printf("%d:%s\n", (i + 1), tokenizedCommandWithoutAnd[i]);
-//                printf("\033[0m");
-//            }
+            executeBackground(tokenizedCommandWithoutAnd, tokens2, shellRootPath);
+            return 0;
+        } else {
+            if (strcmp(commandCopy, " ")) {
 
-            executeForeground(tokenizedCommandWithoutAnd, tokens2);
+                char tokenizedCommandWithoutAnd[MAX_TOKENS][MAX_TOKEN_SIZE];
+                int tokens2 = tokenizeSpace(commandCopy, tokenizedCommandWithoutAnd);
+                executeForeground(tokenizedCommandWithoutAnd, tokens2);
+            }
+            return 0;
         }
     }
 

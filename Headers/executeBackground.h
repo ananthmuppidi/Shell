@@ -1,8 +1,7 @@
-//
-// Created by Ananth Muppidi on 12/09/22.
-//
+#ifndef __EXECUTE_BACKGROUND__H_
+#define __EXECUTE_BACKGROUND__H_
+#include "sizes.h"
+#include "job.h"
 
-#ifndef INC_2021101122_ASSIGNMENT2_EXECUTEBACKGROUND_H
-#define INC_2021101122_ASSIGNMENT2_EXECUTEBACKGROUND_H
-
-#endif //INC_2021101122_ASSIGNMENT2_EXECUTEBACKGROUND_H
+int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int numArgs, char shellRootPath[]);
+#endif

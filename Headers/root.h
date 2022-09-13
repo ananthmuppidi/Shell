@@ -11,5 +11,6 @@
 #include "discover.h"
 #include "history.h"
 #include "executeForeground.h"
+#include "executeBackground.h"
 
 #endif

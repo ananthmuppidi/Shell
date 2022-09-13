@@ -2,7 +2,7 @@
 #define __EXECUTE_FOREGROUND_H__
 
 #include "sizes.h"
-
+#include "job.h"
 
 /// @breif Executes a command in the foreground. This command must be present in the path of the given file.
 /// @param tokenizedCommand This is the command that must be executed at index 0, along with all the other arguments to the command in order.

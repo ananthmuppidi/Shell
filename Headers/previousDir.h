@@ -1,0 +1,9 @@
+//
+// Created by Ananth Muppidi on 13/09/22.
+//
+
+#ifndef INC_2021101122_ASSIGNMENT2_PREVIOUSDIR_H
+#define INC_2021101122_ASSIGNMENT2_PREVIOUSDIR_H
+char previousDirectory[10000];
+
+#endif //INC_2021101122_ASSIGNMENT2_PREVIOUSDIR_H
