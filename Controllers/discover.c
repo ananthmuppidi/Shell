@@ -17,6 +17,7 @@
 
 // ASSUMES THAT THE TARGET (the entity being searched for) IS ALWAYS A FILE
 // PRINT THE SEARCH DIR (only when either -d or no flag)
+// ASSUMES THAT THE TARGET PATH MUST BE PRINTED RELATIVE TO THE SEARCH PATH
 
 int getFlagsDiscover(char input[], int *f, int *d) {
 
@@ -54,9 +55,14 @@ void printRelativePath(char path[], char searchDirectory[]) {
 
 }
 
+int rootPrinted = 0;
+
 
 // recursive function to find all the instances of out target
 // path is the absolute path of where the search starts
+
+
+
 void search(char path[], char target[], char originalSearchDirectory[], int d, int f, int printAll) {
 
     DIR *dp;
@@ -68,6 +74,12 @@ void search(char path[], char target[], char originalSearchDirectory[], int d, i
         perror(err);
         return;
     }
+
+    if (printAll && !rootPrinted) {
+        printf(".\n");
+        rootPrinted = 1;
+    }
+
 
     struct dirent **ep;
     int n;
@@ -135,6 +147,7 @@ void discover(char arg[], char shellRootPath[]) {
         f = 1;
         d = 1;
         getCurrDir(searchDir);
+
         search(searchDir, target, searchDir, d, f, 1);
     }
 
@@ -195,5 +208,5 @@ void discover(char arg[], char shellRootPath[]) {
     }
 
     search(searchDir, target, searchDir, d, f, 0);
-
+    rootPrinted = 0;
 }

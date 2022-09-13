@@ -8,6 +8,8 @@
 #include "../Headers/prompt.h"
 #include "../Headers/shellRootPathHolder.h"
 #include "../Headers/execute.h"
+#include <sys/wait.h>
+#include <sys/types.h>
 
 void childHandler() {
 

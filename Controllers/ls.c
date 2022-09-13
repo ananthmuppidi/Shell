@@ -11,6 +11,7 @@
 #include <time.h>
 #include <libgen.h>
 #include <grp.h>
+#include <errno.h>
 
 
 // ASSUPTION: USED used listxattr which is not POSIX compliant but does run on OSX and Limux distros
@@ -22,7 +23,7 @@
 // cd -
 // colour coding only colours the name and not the permissions
 // Options alwats resolce from anywhere and are applied to all the files
-// HANDLE GAY SHIT -> if file print file
+
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"      /* Red */
@@ -115,10 +116,10 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
                         for (int i = 0; i < spaces; i++) {
                             printf(" ");
                         }
-                        printf("%d ", stats.st_nlink);
+                        printf("%ld ", stats.st_nlink);
 
                     } else {
-                        printf("%d ", stats.st_nlink);
+                        printf("%ld ", stats.st_nlink);
                     }
 
                     struct group *gid;
@@ -155,9 +156,9 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
                         for (int i = 0; i < spaces; i++) {
                             printf(" ");
                         }
-                        printf("%lld ", stats.st_size);
+                        printf("%ld ", stats.st_size);
                     } else {
-                        printf("%lld ", stats.st_size);
+                        printf("%ld ", stats.st_size);
                     }
 
                     struct tm *time;
@@ -185,6 +186,11 @@ void printLs(char path[], int a, int l, int printName) {
         dp = opendir(path);
 
         if (!dp) {
+            if(errno == ENOTDIR){
+                printf("%s\n", basename(path));
+                return ;
+            }
+
             char err[MAX_PATH_SIZE];
             sprintf(err, "ls : %s", basename(path));
             perror(err);
@@ -240,6 +246,11 @@ void printLs(char path[], int a, int l, int printName) {
         dp = opendir(path);
 
         if (!dp) {
+            if(errno == ENOTDIR){
+                printf("%s\n", basename(path));
+                return;
+            }
+
             char err[MAX_PATH_SIZE];
             sprintf(err, "ls : %s", basename(path));
             perror(err);

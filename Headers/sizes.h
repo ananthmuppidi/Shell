@@ -23,6 +23,6 @@
 #define MAX_NAME_SIZE 1000
 
 /// @brief This is the max number of jobs this shell can handle running in the background
-#define MAX_JOBS 5
+#define MAX_JOBS 1000
 
 #endif

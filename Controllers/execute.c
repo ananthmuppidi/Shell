@@ -62,12 +62,13 @@ int execute(char *command, char shellRootPath[], job jobPool[]) {
         }
 
         if (tokenizedCommand[1][0] == '-') {
-            if(!strcasecmp(previousDirectory, "")){
+            if (!strcasecmp(previousDirectory, "")) {
                 printf("No previous directory\n");
                 return 0;
             }
             char currDir[MAX_PATH_SIZE];
             getCurrDir(currDir);
+            printf("%s\n", previousDirectory);
             changeDirectory(previousDirectory, shellRootPath);
             strcpy(previousDirectory, currDir);
         } else {
@@ -85,7 +86,7 @@ int execute(char *command, char shellRootPath[], job jobPool[]) {
     } else if (!strcasecmp(tokenizedCommand[0], "discover")) {
         discover(commandCopy, shellRootPath);
     } else if (!strcasecmp(tokenizedCommand[0], "history")) {
-        printHistory(commandCopy, shellRootPath);
+        printHistory(shellRootPath);
     } else {
         if (checkBackground(commandCopy)) {
             char tokenizedCommandWithoutAnd[MAX_TOKENS][MAX_TOKEN_SIZE];
@@ -105,3 +106,7 @@ int execute(char *command, char shellRootPath[], job jobPool[]) {
 
     return 0;
 }
+
+// discover .
+// discover path issue
+// background started

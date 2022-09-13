@@ -45,8 +45,11 @@ int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
             exit(1);
         }
     } else {
-        if (!err)
+        if (!err) {
+            printf("[%d] %d\n", countProcesses(jobPool) + 1, pid);
             insertJob(jobPool, tokenizedCommand[0], pid);
+        }
+
     }
 
     return 1;

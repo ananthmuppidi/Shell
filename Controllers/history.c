@@ -72,9 +72,11 @@ int lastCommandSame(char command[], char path[]) {
 }
 
 
-void printHistory() {
+void printHistory(char shellRootPath[]) {
     char path[MAX_PATH_SIZE];
-    strcpy(path, "history.txt");
+    strcpy(path, shellRootPath);
+    strcat(path, "/history.txt");
+
 
     FILE *fd = fopen(path, "r");
     char currCommand[MAX_COMMAND_SIZE];

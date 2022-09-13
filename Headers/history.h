@@ -2,7 +2,7 @@
 #define _HISTORY__H_
 
 ///@breif Prints 10 history.
-void printHistory();
+void printHistory(char shellRootPath[]);
 
 ///@brief Adds the given command to history, after checking if the last instance is already there. Handles all ( n </=/> 10 cases).
 ///@param command command to be added (after sanitization)
