@@ -32,7 +32,7 @@ int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
         // Execute the command in the child process
         if (countProcesses(jobPool) >= MAX_JOBS) {
             printf("\nshell: job pool is full, cannot run background command.");
-            return 0;
+            exit(1);
         }
 
         constructArgumentsBg(tokenizedCommand, args, numArgs);
@@ -41,8 +41,8 @@ int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
             printf("\33[2K\r");
             printf("shell: command not found: %s\n", tokenizedCommand[0]);
             promptUser(shellRootPath);
-            err = 1;
             exit(1);
+
         }
     } else {
         if (!err) {
