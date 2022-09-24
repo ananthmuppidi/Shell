@@ -8,6 +8,7 @@ char *shellRootPath;
 job* jobPool;
 double timeTaken;
 char* previousDirectory;
+pid_t currentForeground;
 
 void initializeConstants();
 

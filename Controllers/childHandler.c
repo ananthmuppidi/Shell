@@ -12,6 +12,8 @@
 
 void childHandler() {
     signal(SIGCHLD, handleExit);
+    signal(SIGINT, handleSigInt);
+    signal(SIGTSTP, handleSigStp);
 }
 
 void handleExit() {
@@ -38,4 +40,18 @@ void handleExit() {
 
         return;
     }
+}
+
+void handleSigInt() {
+    if(currentForeground != -1){
+        printf("Here");
+        kill(currentForeground, SIGINT);
+        currentForeground = -1;
+    }
+    return;
+}
+
+
+void handleSigStp() {
+
 }

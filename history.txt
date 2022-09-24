@@ -1,20 +1,20 @@
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 17s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 2s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 16s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 31s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 72s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 90s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 121s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 122s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
-ananthmuppidi@Ananths-MacBook-Air.local:~took 123s> 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
+la 
+l 
+clear 
+ls 
+exit 
+quit 
 ls 
 clear 
-ls -la 
+ls -al 
+fuck 
+clear 
+ls 
+ananthmuppidi@Ananths-MacBook-Air.local:~> 
+ls 
+sleep 1 
+make 
+clEAR 
+SLEEP 1 
+sleep 10 
 clear 

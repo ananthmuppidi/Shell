@@ -12,7 +12,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Refactored, added simpler signal handling." />
+    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Refactored, added simpler signal handling.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/childHandler.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/childHandler.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/executeForeground.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/executeForeground.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/globals.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/globals.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/childHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/childHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/globals.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +79,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -108,7 +118,8 @@
       <workItem from="1663085761309" duration="4256000" />
       <workItem from="1663091438792" duration="2145000" />
       <workItem from="1664038586465" duration="856000" />
-      <workItem from="1664039457418" duration="320000" />
+      <workItem from="1664039457418" duration="2001000" />
+      <workItem from="1664041576439" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Make for all:, updated gitignore (hopefully works now?)">
       <created>1662209685833</created>
@@ -215,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664039476611</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refactored, added simpler signal handling.">
+      <created>1664040095605</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1664040095605</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

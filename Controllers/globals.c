@@ -26,6 +26,7 @@ void initializeConstants() {
 
     timeTaken = 0.0;
 
+    currentForeground = -1;
 
 }
 

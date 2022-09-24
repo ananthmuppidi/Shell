@@ -34,6 +34,7 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
             return 1;
         }
     } else {
+        currentForeground = pid;
         int status;
 
         time_t begin = time(0);
@@ -42,6 +43,7 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
         if (!strcmp(tokenizedCommand[0], "cat")) {
             printf("\n");
         }
+        currentForeground = -1;
 
         time_t end = time(0);
 

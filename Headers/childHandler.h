@@ -5,5 +5,7 @@
 
 void childHandler();
 void handleExit();
+void handleSigInt();
+void handleSigStp();
 
 #endif
