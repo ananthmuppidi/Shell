@@ -8,33 +8,21 @@
 #include "Headers/job.h"
 #include "Headers/jobHandler.h"
 #include "Headers/childHandler.h"
-#include "Headers/children.h"
-#include "Headers/shellRootPathHolder.h"
-#include "Headers/previousDir.h"
-#include "Headers/timeTaken.h"
+#include "Headers/globals.h"
 
 #include <stdio.h>
 #include <string.h>
+
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "EndlessLoop"
 
 int main() {
 
-
-    char shellRootPath[MAX_PATH_SIZE];
-    getShellRoot(shellRootPath);
-
-    strcpy(shellRootPathHolder, shellRootPath);
-
-    makeHistoryFile(shellRootPath);
-
-    initializeJobPool(jobPool);
-
+    initializeConstants();
     childHandler();
 
-    strcpy(previousDirectory, "");
-    timeTaken = 0.0;
+
 
 
     while (1) {
@@ -46,12 +34,13 @@ int main() {
         char semiColonTokens[MAX_TOKENS][MAX_TOKEN_SIZE];
         char finalTokens[MAX_TOKENS][MAX_TOKEN_SIZE];
 
-        promptUser(shellRootPath);
-        getInput(input, shellRootPath);
+        promptUser();
+        getInput(input);
         tokens = tokenizeInput(input, tokenizedInput);
-        for(int i = 0; i < tokens; i++) execute(tokenizedInput[i], shellRootPath, jobPool);
+        for (int i = 0; i < tokens; i++) execute(tokenizedInput[i], jobPool);
     }
 }
+
 
 
 #pragma clang diagnostic pop

@@ -2,9 +2,10 @@
 #include <string.h>
 #include "../Headers/history.h"
 #include <stdio.h>
+#include "../Headers/globals.h"
 
 
-void getInput(char buffer[], char shellRootPath[]){
+void getInput(char buffer[]){
 
     strcpy(buffer, "");
     char inputString[MAX_COMMAND_SIZE];
@@ -15,6 +16,6 @@ void getInput(char buffer[], char shellRootPath[]){
     strcpy(buffer, inputString);
 //    printf("%s\n", buffer);
 
-    addToHistory(inputString, shellRootPath);
+    addToHistory(inputString);
 
 }

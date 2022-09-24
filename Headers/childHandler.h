@@ -6,6 +6,4 @@
 void childHandler();
 void handleExit();
 
-
-
 #endif

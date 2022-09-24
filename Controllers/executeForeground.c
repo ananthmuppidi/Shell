@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#include "../Headers/timeTaken.h"
+#include "../Headers/globals.h"
 
 void constructArguments(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], char *args[MAX_TOKENS], int numArgs) {
     for (int i = 0; i < numArgs; i++) {
@@ -35,7 +35,6 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
         }
     } else {
         int status;
-        double timeTakenfor = 0.0;
 
         time_t begin = time(0);
 
@@ -46,8 +45,8 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
 
         time_t end = time(0);
 
-        timeTakenfor = (end - begin);
-        timeTaken = timeTakenfor;
+        timeTaken = (end - begin);
+
     }
 
     return 1;

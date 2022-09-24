@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
+#include "../Headers/globals.h"
 
 void getShellRoot(char buffer[]) {
     char shellRootPath[MAX_PATH_SIZE];
@@ -14,7 +15,7 @@ void getCurrDir(char buffer[]) {
     getcwd(buffer, MAX_PATH_SIZE);
 }
 
-void getPromptCurrDir(char buffer[], char shellRootPath[]) {
+void getPromptCurrDir(char buffer[]) {
 
     char absoluteTempPath[MAX_PATH_SIZE];
     getcwd(absoluteTempPath, MAX_PATH_SIZE);
@@ -46,7 +47,7 @@ void getPromptCurrDir(char buffer[], char shellRootPath[]) {
 
 }
 
-void getAbsolutePath(char arg[], char buffer[], char shellRootPath[]) {
+void getAbsolutePath(char arg[], char buffer[]) {
     if (arg[0] == '/') {
         strcpy(buffer, arg);
         return;

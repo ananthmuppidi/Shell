@@ -4,7 +4,7 @@
 
 /// @breif Prints the prompt for the user
 /// @param shellRootPath It is the path of the shell where it is initialized.
-void promptUser(char shellRootPath[]);
-void getPrompt(char shellRootPath[], char buffer[]);
+void promptUser();
+void getPrompt(char buffer[]);
 
 #endif

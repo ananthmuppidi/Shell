@@ -3,6 +3,7 @@
 #include "../Headers/sizes.h"
 #include "../Headers/tokenizer.h"
 #include <string.h>
+#include "../Headers/globals.h"
 
 int countLines(char path[]) {
 
@@ -48,7 +49,7 @@ void sanitizeCommand(char command[]) {
 
 }
 
-void makeHistoryFile(char shellRootPath[]) {
+void makeHistoryFile() {
     char path[MAX_PATH_SIZE];
     strcpy(path, shellRootPath);
     strcat(path, "/history.txt");
@@ -72,7 +73,7 @@ int lastCommandSame(char command[], char path[]) {
 }
 
 
-void printHistory(char shellRootPath[]) {
+void printHistory(  ) {
     char path[MAX_PATH_SIZE];
     strcpy(path, shellRootPath);
     strcat(path, "/history.txt");
@@ -104,7 +105,7 @@ void printHistory(char shellRootPath[]) {
 }
 
 
-void addToHistory(char command[], char shellRootPath[]) {
+void addToHistory(char command[]) {
 
     sanitizeCommand(command);
 

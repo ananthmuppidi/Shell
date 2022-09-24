@@ -1,4 +1,5 @@
 #include "../Headers/helpers.h"
+#include "../Headers/globals.h"
 
 int countDigits(int n) {
     if(n == 0) return 1;

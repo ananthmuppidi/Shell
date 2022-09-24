@@ -1,3 +1,3 @@
 all:
-	gcc -fcommon main.c Controllers/*.c
-	./a.out
+	gcc -fcommon -g main.c Controllers/*.c -o shell
+	

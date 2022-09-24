@@ -12,6 +12,7 @@
 #include <libgen.h>
 #include <grp.h>
 #include <errno.h>
+#include "../Headers/globals.h"
 
 
 // ASSUPTION: USED used listxattr which is not POSIX compliant but does run on OSX and Limux distros
@@ -116,10 +117,10 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
                         for (int i = 0; i < spaces; i++) {
                             printf(" ");
                         }
-                        printf("%ld ", stats.st_nlink);
+                        printf("%hu ", stats.st_nlink);
 
                     } else {
-                        printf("%ld ", stats.st_nlink);
+                        printf("%hu ", stats.st_nlink);
                     }
 
                     struct group *gid;
@@ -156,9 +157,9 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
                         for (int i = 0; i < spaces; i++) {
                             printf(" ");
                         }
-                        printf("%ld ", stats.st_size);
+                        printf("%lld ", stats.st_size);
                     } else {
-                        printf("%ld ", stats.st_size);
+                        printf("%lld ", stats.st_size);
                     }
 
                     struct tm *time;
@@ -186,9 +187,9 @@ void printLs(char path[], int a, int l, int printName) {
         dp = opendir(path);
 
         if (!dp) {
-            if(errno == ENOTDIR){
+            if (errno == ENOTDIR) {
                 printf("%s\n", basename(path));
-                return ;
+                return;
             }
 
             char err[MAX_PATH_SIZE];
@@ -246,7 +247,7 @@ void printLs(char path[], int a, int l, int printName) {
         dp = opendir(path);
 
         if (!dp) {
-            if(errno == ENOTDIR){
+            if (errno == ENOTDIR) {
                 printf("%s\n", basename(path));
                 return;
             }
@@ -313,7 +314,7 @@ void printLs(char path[], int a, int l, int printName) {
 
 }
 
-void ls(char args[], char shellRootPath[]) {
+void ls(char args[]) {
 
     int tokens;
 
@@ -351,7 +352,7 @@ void ls(char args[], char shellRootPath[]) {
         for (int i = 1; i < tokens; i++) {
             if (!(tokenizedInput[i][0] == '-' && tokenizedInput[i][1] != '\0')) {
                 char absPath[MAX_PATH_SIZE];
-                getAbsolutePath(tokenizedInput[i], absPath, shellRootPath);
+                getAbsolutePath(tokenizedInput[i], absPath);
                 printLs(absPath, a, l, 0);
             }
         }
@@ -360,7 +361,7 @@ void ls(char args[], char shellRootPath[]) {
         for (int i = 1; i < tokens; i++) {
             if (!(tokenizedInput[i][0] == '-' && tokenizedInput[i][1] != '\0')) {
                 char absPath[MAX_PATH_SIZE];
-                getAbsolutePath(tokenizedInput[i], absPath, shellRootPath);
+                getAbsolutePath(tokenizedInput[i], absPath);
                 printLs(absPath, a, l, 1);
 
             }

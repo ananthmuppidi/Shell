@@ -14,6 +14,7 @@
 #include <libgen.h>
 #include <grp.h>
 #include "../Headers/discover.h"
+#include "../Headers/globals.h"
 
 // ASSUMES THAT THE TARGET (the entity being searched for) IS ALWAYS A FILE
 // PRINT THE SEARCH DIR (only when either -d or no flag)
@@ -125,7 +126,7 @@ void search(char path[], char target[], char originalSearchDirectory[], int d, i
 }
 
 
-void discover(char arg[], char shellRootPath[]) {
+void discover(char arg[]) {
 
     char tokenizedInput[MAX_TOKENS][MAX_TOKEN_SIZE];
     int tokens = tokenizeSpace(arg, tokenizedInput);
@@ -159,7 +160,7 @@ void discover(char arg[], char shellRootPath[]) {
                     return;
                 } else {
                     foundSearchDirectory = 1;
-                    getAbsolutePath(tokenizedInput[i], searchDir, shellRootPath);
+                    getAbsolutePath(tokenizedInput[i], searchDir);
                 }
             } else if (tokenizedInput[i][0] == '-' && tokenizedInput[i][1] != '\0') {
                 if (foundFlags) {

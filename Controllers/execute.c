@@ -4,8 +4,8 @@
 #include "../Headers/root.h"
 #include "../Headers/tokenizer.h"
 #include <stdio.h>
-#include "../Headers/previousDir.h"
 #include "../Headers/dir.h"
+#include "../Headers/globals.h"
 
 // ADD ERRORS FOR NO REASON
 
@@ -44,7 +44,7 @@ int checkBackground(char command[]) {
     return 0;
 }
 
-int execute(char *command, char shellRootPath[], job jobPool[]) {
+int execute(char *command, job jobPool[]) {
     // TO DO: add tokenization for the input to detect foreground and background processes
     char commandCopy[MAX_COMMAND_SIZE];
     strcpy(commandCopy,
@@ -69,29 +69,29 @@ int execute(char *command, char shellRootPath[], job jobPool[]) {
             char currDir[MAX_PATH_SIZE];
             getCurrDir(currDir);
             printf("%s\n", previousDirectory);
-            changeDirectory(previousDirectory, shellRootPath);
+            changeDirectory(previousDirectory);
             strcpy(previousDirectory, currDir);
         } else {
             char currDir[MAX_PATH_SIZE];
             getCurrDir(currDir);
             strcpy(previousDirectory, currDir);
-            changeDirectory(tokenizedCommand[1], shellRootPath);
+            changeDirectory(tokenizedCommand[1]);
         }
     } else if (!strcasecmp(tokenizedCommand[0], "clear")) {
         printf("\033[H\033[J");
     } else if (!strcasecmp(tokenizedCommand[0], "ls")) {
-        ls(commandCopy, shellRootPath);
+        ls(commandCopy);
     } else if (!strcasecmp(tokenizedCommand[0], "echo")) {
         echo(commandCopy);
     } else if (!strcasecmp(tokenizedCommand[0], "discover")) {
-        discover(commandCopy, shellRootPath);
+        discover(commandCopy);
     } else if (!strcasecmp(tokenizedCommand[0], "history")) {
         printHistory(shellRootPath);
     } else {
         if (checkBackground(commandCopy)) {
             char tokenizedCommandWithoutAnd[MAX_TOKENS][MAX_TOKEN_SIZE];
             int tokens2 = tokenizeSpace(commandCopy, tokenizedCommandWithoutAnd);
-            executeBackground(tokenizedCommandWithoutAnd, tokens2, shellRootPath);
+            executeBackground(tokenizedCommandWithoutAnd, tokens2);
             return 0;
         } else {
             if (strcmp(commandCopy, " ")) {
@@ -106,7 +106,3 @@ int execute(char *command, char shellRootPath[], job jobPool[]) {
 
     return 0;
 }
-
-// discover .
-// discover path issue
-// background started

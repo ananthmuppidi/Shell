@@ -7,8 +7,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdlib.h>
-#include "../Headers/children.h"
 #include "../Headers/prompt.h"
+#include "../Headers/globals.h"
 
 
 void constructArgumentsBg(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], char *args[MAX_TOKENS], int numArgs) {
@@ -18,7 +18,7 @@ void constructArgumentsBg(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], cha
     args[numArgs] = NULL;
 }
 
-int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int numArgs, char shellRootPath[]) {
+int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int numArgs) {
 
     int err = 0;
     char *args[numArgs + 1];

@@ -5,25 +5,16 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <errno.h>
-#include "../Headers/previousDir.h"
 
-// handle cd -
 
-void changeDirectory(char path[], char shellRootPath[]) {
+void changeDirectory(char path[]) {
     int chDirReturn = 0;
     char absoluteDir[MAX_PATH_SIZE];
-
-
-
-
-    getAbsolutePath(path, absoluteDir, shellRootPath);
-
+    getAbsolutePath(path, absoluteDir);
     chDirReturn = chdir(absoluteDir);
-
 
     if (chDirReturn == -1) {
         fprintf(stderr, "cd: %s: %s\n", strerror(errno), path);
-        // error handling
     }
 
 }

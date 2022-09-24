@@ -4,9 +4,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../Headers/children.h"
-#include "../Headers/shellRootPathHolder.h"
 #include "../Headers/prompt.h"
+#include "../Headers/globals.h"
 
 
 void initializeJobPool(job jobPool[]) {

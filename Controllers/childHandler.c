@@ -4,31 +4,14 @@
 #include <string.h>
 #include <stdio.h>
 #include "../Headers/jobHandler.h"
-#include "../Headers/children.h"
 #include "../Headers/prompt.h"
-#include "../Headers/shellRootPathHolder.h"
-#include "../Headers/execute.h"
 #include <sys/wait.h>
-#include <sys/types.h>
+
+#include "../Headers/globals.h"
+#include "../Headers/sizes.h"
 
 void childHandler() {
-
-    struct sigaction childAction;
-    struct sigaction tempAction;
-
-    memset(&childAction, 0, sizeof(struct sigaction));
-    memset(&tempAction, 0, sizeof(struct sigaction));
-
-    childAction.sa_handler = handleExit;
-    childAction.sa_flags = SA_RESTART | SA_SIGINFO;
-    sigemptyset(&childAction.sa_mask);
-
-    if (sigaction(SIGCHLD, &childAction, &tempAction) < 0) {
-        printf("shell : signal error (fatal)");
-        exit(0);
-    }
-
-
+    signal(SIGCHLD, handleExit);
 }
 
 void handleExit() {
@@ -42,7 +25,7 @@ void handleExit() {
         int ret = removeJob(jobPool, pid, status, name);
         if (ret) {
             char arr[1000];
-            getPrompt(shellRootPathHolder, arr);
+            getPrompt(arr);
             if (status) {
                 printf("\n%s with pid %d exited normally\n%s", name, pid, arr);
                 fflush(stdout);

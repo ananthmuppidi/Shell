@@ -5,10 +5,10 @@
 #include <pwd.h>
 #include <string.h>
 #include <assert.h>
-#include "../Headers/timeTaken.h"
+#include "../Headers/globals.h"
 
 
-void promptUser(char shellRootPath[])
+void promptUser()
 {
     char prompt[MAX_PATH_SIZE];
     char hostname[MAX_USERNAME_SIZE];
@@ -17,7 +17,7 @@ void promptUser(char shellRootPath[])
     struct passwd *p = getpwuid(getuid()); // Check for NULL!
     gethostname(hostname, sizeof(hostname)); // Check the return value!
 
-    getPromptCurrDir(currDir, shellRootPath);
+    getPromptCurrDir(currDir);
 
     
     for(int i = 0; i < 1000; i++) prompt[i] = '\0';
@@ -42,7 +42,7 @@ void promptUser(char shellRootPath[])
 
 }
 
-void getPrompt(char shellRootPath[], char buffer[])
+void getPrompt(char buffer[])
 {
     char prompt[MAX_PATH_SIZE];
     char hostname[MAX_USERNAME_SIZE];
@@ -51,7 +51,7 @@ void getPrompt(char shellRootPath[], char buffer[])
     struct passwd *p = getpwuid(getuid()); // Check for NULL!
     gethostname(hostname, sizeof(hostname)); // Check the return value!
 
-    getPromptCurrDir(currDir, shellRootPath);
+    getPromptCurrDir(currDir);
 
 
     for(int i = 0; i < 1000; i++) prompt[i] = '\0';

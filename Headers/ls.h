@@ -6,12 +6,12 @@
 /// @brief This is a function that lists all the directories, files and optionally the hidden files.
 /// @aparams Accepts the input for the options and the path. Can provide as many directories as required
 /// @aparams The path to the root of the shell
-void ls(char args[], char shellRootPath[]);
+void ls(char args[]);
 
 /// @breif Prints the name of the directory
 /// @param absolutePath The absolute path of the directory that needs its contents listed
 /// @param Set to one if new line characters are required
-void printDirectory(char absolutePath[], int line);
+void printDirectory(int line);
 
 
 /// @param Prints the directory list along with

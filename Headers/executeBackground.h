@@ -3,5 +3,5 @@
 #include "sizes.h"
 #include "job.h"
 
-int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int numArgs, char shellRootPath[]);
+int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int numArgs);
 #endif
