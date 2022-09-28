@@ -12,8 +12,13 @@
 
 void initializeConstants() {
 
+    errPid = 0;
+    err = 0;
+
+
     shellRootPath = (char *) malloc(sizeof(char) * MAX_PATH_SIZE);
     previousDirectory = (char *) malloc(sizeof(char) * MAX_PATH_SIZE);
+    currentForegroundName = (char*)malloc(sizeof(char) * MAX_COMMAND_SIZE);
 
     getShellRoot(shellRootPath);
 

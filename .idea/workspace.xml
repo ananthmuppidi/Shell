@@ -12,14 +12,28 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Refactored, added simpler signal handling.">
+    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Pushed basic signal Handlers">
+      <change afterPath="$PROJECT_DIR$/Controllers/fg.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/jobs.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/redirection.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/sig.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/bg.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/fg.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/jobs.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/redirection.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/sig.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/childHandler.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/childHandler.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/execute.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/execute.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/executeBackground.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/executeBackground.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/executeForeground.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/executeForeground.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/globals.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/globals.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Headers/childHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/childHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/input.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/prompt.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/prompt.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Headers/globals.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/globals.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Headers/root.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/root.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" afterDir="false" />
     </list>
@@ -79,13 +93,18 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Controllers" />
       <recent name="$PROJECT_DIR$/Headers" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="q" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
@@ -119,7 +138,12 @@
       <workItem from="1663091438792" duration="2145000" />
       <workItem from="1664038586465" duration="856000" />
       <workItem from="1664039457418" duration="2001000" />
-      <workItem from="1664041576439" duration="661000" />
+      <workItem from="1664041576439" duration="33321000" />
+      <workItem from="1664184081985" duration="4998000" />
+      <workItem from="1664292066858" duration="3990000" />
+      <workItem from="1664315837582" duration="779000" />
+      <workItem from="1664378388228" duration="1000" />
+      <workItem from="1664381812047" duration="13030000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Make for all:, updated gitignore (hopefully works now?)">
       <created>1662209685833</created>
@@ -233,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664040095605</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Pushed basic signal Handlers">
+      <created>1664042452369</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1664042452369</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +325,8 @@
     <MESSAGE value="Fixed history." />
     <MESSAGE value="Fixed background execvp." />
     <MESSAGE value="Refactored, added simpler signal handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored, added simpler signal handling." />
+    <MESSAGE value="Pushed basic signal Handlers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushed basic signal Handlers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

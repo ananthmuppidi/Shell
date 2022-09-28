@@ -9,6 +9,10 @@ job* jobPool;
 double timeTaken;
 char* previousDirectory;
 pid_t currentForeground;
+pid_t shellPid;
+char *currentForegroundName;
+pid_t errPid;
+int err;
 
 void initializeConstants();
 

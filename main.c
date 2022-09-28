@@ -21,8 +21,7 @@ int main() {
 
     initializeConstants();
     childHandler();
-
-
+    shellPid = getpid();
 
 
     while (1) {

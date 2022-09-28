@@ -9,6 +9,17 @@
 
 // ADD ERRORS FOR NO REASON
 
+
+int checkRedirection(char inp[][MAX_TOKEN_SIZE], int tokens) {
+    for (int i = 0; i < tokens; i++) {
+        if (!strcasecmp(inp[i], ">") || !strcasecmp(inp[i], "<") || !strcasecmp(inp[i], ">>")) {
+            return 1;
+        }
+
+    }
+    return 0;
+}
+
 int checkBackground(char command[]) {
 
     char commandCopy[MAX_COMMAND_SIZE];
@@ -19,12 +30,6 @@ int checkBackground(char command[]) {
     int tokens;
 
     tokens = tokenizeSpace(command, tokenizedCommand);
-//    printf("%d\n", tokens);
-//    for (int i = 0; i < tokens; i++) {
-//        printf("\033[0;36m");
-//        printf("%d:%s\n", (i + 1), tokenizedCommand[i]);
-//        printf("\033[0m");
-//    }
 
 
     if (!strcasecmp(tokenizedCommand[tokens - 1], "&")) { // if the last element of the tokenized command is a @
@@ -45,13 +50,17 @@ int checkBackground(char command[]) {
 }
 
 int execute(char *command, job jobPool[]) {
-    // TO DO: add tokenization for the input to detect foreground and background processes
+
     char commandCopy[MAX_COMMAND_SIZE];
-    strcpy(commandCopy,
-           command); // stores a copy of the command since it gets tokenized and the intitial command array gets destroyed
+    strcpy(commandCopy, command);
 
     char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE];
     int tokens = tokenizeSpace(command, tokenizedCommand);
+
+    if (checkRedirection(tokenizedCommand, tokens)) {
+        redirection(tokenizedCommand, tokens);
+        return 1;
+    }
 
     if (!strcasecmp(tokenizedCommand[0], "pwd")) {
         printPwd();
@@ -87,8 +96,11 @@ int execute(char *command, job jobPool[]) {
         discover(commandCopy);
     } else if (!strcasecmp(tokenizedCommand[0], "history")) {
         printHistory(shellRootPath);
+    } else if (!strcasecmp(tokenizedCommand[0], "jobs")) {
+        jobs();
     } else {
         if (checkBackground(commandCopy)) {
+
             char tokenizedCommandWithoutAnd[MAX_TOKENS][MAX_TOKEN_SIZE];
             int tokens2 = tokenizeSpace(commandCopy, tokenizedCommandWithoutAnd);
             executeBackground(tokenizedCommandWithoutAnd, tokens2);

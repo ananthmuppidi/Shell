@@ -1,20 +1,20 @@
-la 
-l 
 clear 
 ls 
-exit 
-quit 
-ls 
 clear 
-ls -al 
-fuck 
+ls > sdfsdf > 
+clear 
+sdf < sdf < 
+ls > test.txt 
+SDF > SDF 
+CLEAR 
+sdf < sdf 
+sdf > sdf 
 clear 
 ls 
-ananthmuppidi@Ananths-MacBook-Air.local:~> 
+rm sdf 
 ls 
-sleep 1 
-make 
-clEAR 
-SLEEP 1 
-sleep 10 
-clear 
+pwd 
+ls 
+cd Headers 
+ls 
+pwd 

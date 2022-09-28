@@ -8,8 +8,7 @@
 #include "../Headers/globals.h"
 
 
-void promptUser()
-{
+void promptUser() {
     char prompt[MAX_PATH_SIZE];
     char hostname[MAX_USERNAME_SIZE];
     char currDir[MAX_PATH_SIZE];
@@ -19,8 +18,8 @@ void promptUser()
 
     getPromptCurrDir(currDir);
 
-    
-    for(int i = 0; i < 1000; i++) prompt[i] = '\0';
+
+    for (int i = 0; i < MAX_PATH_SIZE; i++) prompt[i] = '\0';
 
     strcat(prompt, p->pw_name);
     strcat(prompt, "@");
@@ -28,22 +27,22 @@ void promptUser()
     strcat(prompt, ":");
     strcat(prompt, currDir);
 
-    if(timeTaken > 1.0){
-        int cattime = (int) timeTaken;
+    if (timeTaken > 1.0) {
+        int catTime = (int) timeTaken;
         char append[1000];
-        sprintf(append, "took %ds", cattime);
+        sprintf(append, "took %ds", catTime);
         timeTaken = 0.0;
         strcat(prompt, append);
     }
     strcat(prompt, "> ");
 
 
-    printf("%s", prompt);
+    printf("\r%s", prompt);
 
 }
 
-void getPrompt(char buffer[])
-{
+void getPrompt(char buffer[]) {
+
     char prompt[MAX_PATH_SIZE];
     char hostname[MAX_USERNAME_SIZE];
     char currDir[MAX_PATH_SIZE];
@@ -54,7 +53,7 @@ void getPrompt(char buffer[])
     getPromptCurrDir(currDir);
 
 
-    for(int i = 0; i < 1000; i++) prompt[i] = '\0';
+    for (int i = 0; i < 1000; i++) prompt[i] = '\0';
 
     strcat(prompt, p->pw_name);
     strcat(prompt, "@");
