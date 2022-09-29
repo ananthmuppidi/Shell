@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "../Headers/execute.h"
+#include "../Headers/root.h"
 
 void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
 
@@ -20,8 +21,13 @@ void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
     int out_location;
     int out_type; // 1 = truncate, 2 = append
 
+    int out_backup;
+    int in_backup;
+
+    out_backup = dup(STDOUT_FILENO);
+    in_backup = dup(STDIN_FILENO);
+
     char command[MAX_COMMAND_SIZE]; // there can only be one command in the case of redirection
-    memset(command, MAX_COMMAND_SIZE, '\0');
 
     if (!strcmp(input[tokens - 1], ">") || !strcmp(input[tokens - 1], "<") || !strcmp(input[tokens - 1], ">>")) {
         printf("shell : redirection Error\n");
@@ -74,6 +80,7 @@ void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
         dup_in = dup(STDIN_FILENO);
         if (dup2(inputFile, STDIN_FILENO) == -1) {
             printf("shell: unable to redirect input\n");
+            perror("err:");
             return;
         }
     }
@@ -92,27 +99,39 @@ void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
         }
 
         dup_out = dup(STDOUT_FILENO);
-        if (dup2(inputFile, 0) == -1) {
-            printf("shell: unable to redirect input\n");
+        if (dup2(outputFile, STDOUT_FILENO) == -1) {
+            printf("shell: unable to redirect output\n");
             return;
         }
     }
 
     // now all the redirection has been handled and we need to actually run the command.
     // For this, we need to reconstruct the command without the redirection symbols and files, which have been set to NULL.
+
+    strcpy(command, "");
+
     for(int i = 0; i < tokens; i++){
-        strcpy(command, input[i]);
-        strcpy(command, " ");
+        strcat(command, input[i]);
+        strcat(command, " ");
     }
+
+//    char commandCopy[MAX_COMMAND_SIZE];
+//    char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE];
+//    strcpy(commandCopy, command);
+//    int numTokens = tokenizeSpace(command, tokenizedCommand);
 
 
     execute(command, jobPool);
+    memset(command, MAX_COMMAND_SIZE, '\0' );
+
+    dup2(in_backup, STDIN_FILENO);
+    dup2(out_backup, STDOUT_FILENO);
 
 
-    dup2(dup_in, STDIN_FILENO);
-    dup2(dup_out, STDOUT_FILENO);
-    printf("%s\n", command);
-    fflush(stdout);
-    fflush(stdin);
+//
+//    fflush(stdout);
+//    fflush(stdin);
+
+//    printf("%s\n", command);
 
 }

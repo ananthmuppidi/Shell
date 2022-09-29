@@ -1,20 +1,20 @@
-clear 
+echo testtest > a.txt 
+echo hello > sff.txt 
+cat < sff.txt 
 ls 
 clear 
-ls > sdfsdf > 
-clear 
-sdf < sdf < 
-ls > test.txt 
-SDF > SDF 
-CLEAR 
-sdf < sdf 
-sdf > sdf 
-clear 
-ls 
-rm sdf 
-ls 
-pwd 
-ls 
-cd Headers 
-ls 
-pwd 
+cat < sff.txt 
+ls > sff.txt 
+b redirection 
+cat < sff.txct 
+cat < sff.txt 
+cat < a.txt 
+echo testtest > a.txt 
+cat < a.txt 
+cat < a.txt > sff.txt 
+cat < a.txt 
+cat < a.txt > a.txt 
+cat < a.txt 
+cat < sff.txt 
+echo helloworld > sff.txt 
+echo thisisthetest >> sff.txt 

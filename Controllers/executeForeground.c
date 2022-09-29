@@ -42,9 +42,7 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
         time_t begin = time(0);
 
         waitpid(pid, &status, WUNTRACED);
-        if (!strcmp(tokenizedCommand[0], "cat")) {
-            printf("\n");
-        }
+
         currentForeground = -1;
 
         time_t end = time(0);
