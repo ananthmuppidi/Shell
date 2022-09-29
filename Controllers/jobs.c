@@ -71,6 +71,9 @@ void jobs() {
             }
 
 
+        } else {
+            printf("shell : procfile not found");
+            return;
         }
     }
 

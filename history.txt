@@ -1,20 +1,20 @@
-echo testtest > a.txt 
-echo hello > sff.txt 
-cat < sff.txt 
+clear 
 ls 
 clear 
-cat < sff.txt 
-ls > sff.txt 
-b redirection 
-cat < sff.txct 
-cat < sff.txt 
-cat < a.txt 
-echo testtest > a.txt 
-cat < a.txt 
-cat < a.txt > sff.txt 
-cat < a.txt 
-cat < a.txt > a.txt 
-cat < a.txt 
-cat < sff.txt 
-echo helloworld > sff.txt 
-echo thisisthetest >> sff.txt 
+ls | grep pipe 
+make 
+clear 
+ls 
+lcear 
+cear 
+clear 
+ls | grep p 
+Ã 
+make 
+clear 
+./shel;l 
+./shell 
+clear 
+ls 
+clear 
+ls | grep pipe 

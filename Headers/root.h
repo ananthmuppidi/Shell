@@ -18,5 +18,6 @@
 #include "executeForeground.h"
 #include "executeBackground.h"
 #include "redirection.h"
+#include "pipes.h"
 
 #endif

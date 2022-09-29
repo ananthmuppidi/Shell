@@ -30,4 +30,6 @@ int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]);
 /// @return Returns the number of tokens
 int tokenizeSpace(char input[], char output[][MAX_TOKEN_SIZE]);
 
+int tokenizePipe(char input[], char output[][MAX_TOKEN_SIZE]);
+
 #endif

@@ -111,4 +111,25 @@ int tokenizeInput(char input[], char output[][MAX_TOKEN_SIZE]) {
     return idx;
 }
 
+int tokenizePipe(char input[], char output[][MAX_TOKEN_SIZE]) {
+
+    char *delimiter = "|";
+    char *token;
+
+    int idx = 0;
+    int tokenCount = 0;
+
+    token = strtok(input, delimiter);
+    while (token != NULL) {
+        tokenCount++;
+        strcpy(output[idx++], token);
+//        printf("\033[0;36m");
+//        printf("%d:%s   ", tokenCount ,token);
+//        printf("\033[0m");
+        token = strtok(NULL, delimiter);
+    }
+    return tokenCount;
+}
+
+
 

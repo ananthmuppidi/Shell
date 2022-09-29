@@ -20,6 +20,16 @@ int checkRedirection(char inp[][MAX_TOKEN_SIZE], int tokens) {
     return 0;
 }
 
+int checkPiping(char inp[][MAX_TOKEN_SIZE], int tokens) {
+    for (int i = 0; i < tokens; i++) {
+        if (!strcasecmp(inp[i], "|")) {
+            return 1;
+        }
+
+    }
+    return 0;
+}
+
 int checkBackground(char command[]) {
 
     char commandCopy[MAX_COMMAND_SIZE];
@@ -56,6 +66,11 @@ int execute(char *command, job jobPool[]) {
 
     char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE];
     int tokens = tokenizeSpace(command, tokenizedCommand);
+
+    if (checkPiping(tokenizedCommand, tokens)) {
+        pipes(tokenizedCommand, tokens);
+        return 1;
+    }
 
     if (checkRedirection(tokenizedCommand, tokens)) {
         redirection(tokenizedCommand, tokens);
