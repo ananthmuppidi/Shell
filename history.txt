@@ -1,20 +1,20 @@
+ls 
+clear 
+ls -al 
+ls 
 clear 
 ls 
 clear 
-ls | grep pipe 
-make 
+ls 
 clear 
 ls 
-lcear 
-cear 
-clear 
-ls | grep p 
-Ã 
-make 
-clear 
-./shel;l 
-./shell 
+a sclear 
+ls qweclear 
 clear 
 ls 
 clear 
-ls | grep pipe 
+ls 
+clear 
+ls a 
+ls aclear 
+ls 

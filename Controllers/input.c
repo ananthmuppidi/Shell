@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../Headers/prompt.h"
+#include "../Headers/root.h"
 
 void die(const char *s) {
     perror(s);
@@ -44,39 +45,26 @@ void getInput(char buffer[]) {
     int pt = 0;
 
     while (read(STDIN_FILENO, &c, 1) == 1) {
-        if (iscntrl(c)) {
-            if (c == 10)
-                break;
-            else if (c == 27) {
-                char buf[3];
-                buf[2] = 0;
-                if (read(STDIN_FILENO, buf, 2) == 2) {   // length of escape code
-                    //                    printf("\rarrow key: %s", buf);
-                }
-            } else if (c == 127) { // backspace
-                if (pt > 0) {
-                    if (inp[pt - 1] == 9) {
-                        for (int i = 0; i < 7; i++) {
-                            printf("\b");
-                        }
-                    }
-                    inp[--pt] = '\0';
+
+        if (c == 4) exit(0);
+        if (c == 9 || c == 127) {
+            if (c == 127) {
+                if(pt > 0){
                     printf("\b \b");
+                    inp[--pt] = '\0';
                 }
-            } else if (c == 9) { // TAB character
-                inp[pt++] = c;
-                for (int i = 0; i < 8; i++) { // TABS should be 8 spaces
-                    printf(" ");
-                }
-            } else if (c == 4) {
-                exit(0);
             } else {
-                printf("%d\n", c);
+                autoComplete(inp, pt);
             }
-        } else {
+        } else if (c != 10) {
             inp[pt++] = c;
             printf("%c", c);
         }
+        if (c == 10) {
+            break;
+        }
+
+
     }
     disableRawMode();
     memset(buffer, MAX_COMMAND_SIZE, '\0');

@@ -19,5 +19,6 @@
 #include "executeBackground.h"
 #include "redirection.h"
 #include "pipes.h"
+#include "autocomplete.h"
 
 #endif

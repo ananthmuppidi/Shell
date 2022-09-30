@@ -13,12 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Added redirection">
+      <change afterPath="$PROJECT_DIR$/Controllers/autocomplete.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Headers/autocomplete.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/execute.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/execute.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/jobs.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/jobs.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/tokenizer.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/tokenizer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/input.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Headers/root.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/root.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Headers/tokenizer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/tokenizer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" afterDir="false" />
@@ -129,7 +128,8 @@
       <workItem from="1664292066858" duration="3990000" />
       <workItem from="1664315837582" duration="779000" />
       <workItem from="1664378388228" duration="1000" />
-      <workItem from="1664381812047" duration="22681000" />
+      <workItem from="1664381812047" duration="25029000" />
+      <workItem from="1664524460158" duration="4820000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Make for all:, updated gitignore (hopefully works now?)">
       <created>1662209685833</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664451997964</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added redirection">
+      <created>1664461272293</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664461272293</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
