@@ -12,16 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Added redirection">
-      <change afterPath="$PROJECT_DIR$/Controllers/autocomplete.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Headers/autocomplete.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/input.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Headers/root.h" beforeDir="false" afterPath="$PROJECT_DIR$/Headers/root.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/history.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" beforeDir="false" afterPath="$PROJECT_DIR$/shell.dSYM/Contents/Resources/DWARF/shell" afterDir="false" />
-    </list>
+    <list default="true" id="61b3df0a-0fb1-4d69-a3c9-c8eaf8514d8a" name="Changes" comment="Added redirection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +120,7 @@
       <workItem from="1664315837582" duration="779000" />
       <workItem from="1664378388228" duration="1000" />
       <workItem from="1664381812047" duration="25029000" />
-      <workItem from="1664524460158" duration="4820000" />
+      <workItem from="1664524460158" duration="5006000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Make for all:, updated gitignore (hopefully works now?)">
       <created>1662209685833</created>
@@ -271,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664461272293</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added redirection">
+      <created>1664538223388</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1664538223388</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
