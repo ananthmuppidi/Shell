@@ -1,6 +1,0 @@
-#ifndef INC_2021101122_ASSIGNMENT2_FG_H
-#define INC_2021101122_ASSIGNMENT2_FG_H
-
-void fg(char command[]);
-
-#endif //INC_2021101122_ASSIGNMENT2_FG_H
