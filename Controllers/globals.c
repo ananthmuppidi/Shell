@@ -2,6 +2,8 @@
 
 void initializeConstants() {
 
+
+    autocompleted = 0;
     errPid = 0;
     err = 0;
 

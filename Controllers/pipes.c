@@ -47,7 +47,7 @@ void pipes(char tokenizedCommand[][MAX_TOKEN_SIZE], int tokens)
         } else {
             dup2(out_backup, STDOUT_FILENO);
         }
-        execute(pipeCommands[i], jobPool);
+        execute(pipeCommands[i]);
         close(pipes[i % 2][1]);
         close(pipes[(i + 1) % 2][0]);
 

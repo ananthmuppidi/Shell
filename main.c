@@ -36,7 +36,7 @@ int main() {
         promptUser();
         getInput(input);
         tokens = tokenizeInput(input, tokenizedInput);
-        for (int i = 0; i < tokens; i++) execute(tokenizedInput[i], jobPool);
+        for (int i = 0; i < tokens; i++) execute(tokenizedInput[i]);
     }
 }
 

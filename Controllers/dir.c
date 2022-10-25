@@ -31,6 +31,7 @@ void getPromptCurrDir(char buffer[]) {
                 idx++;
             while (absoluteTempPath[idx] != '\0')
                 buffer[i++] = absoluteTempPath[idx++];
+                buffer[0] = '~';
 
             buffer[i] = '\0';
             return;

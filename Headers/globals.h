@@ -16,6 +16,7 @@ pid_t errPid;
 int err;
 time_t startTime;
 time_t endTime;
+int autocompleted;
 
 void initializeConstants();
 

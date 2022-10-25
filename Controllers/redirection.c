@@ -109,7 +109,7 @@ void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
 //    int numTokens = tokenizeSpace(command, tokenizedCommand);
 
 
-    execute(command, jobPool);
+    execute(command);
     memset(command, MAX_COMMAND_SIZE, '\0' );
 
     dup2(in_backup, STDIN_FILENO);

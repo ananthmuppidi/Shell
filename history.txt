@@ -1,20 +1,20 @@
-clear 
-ls 
-cat Controllers/autocomplete.c > test.txt 
-vim test.txt& 
-clear 
 jobs 
-fg 4 
-jovs 
-jobs 
-sig 3 9 
-jobs 
-ls 
-cear 
-clear 
-cat sample2.txt | head -7 | tail -5[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[test[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 
+bg -1 
+bg 6 
 clear 
 ls 
 clear 
-cat test.txt | head -7 | tail -5 
-cat test.txt | head -7 
+ls 
+clear 
+ls 
+clear 
+ls 
+clear 
+ls 
+clear 
+vim sff.txt& 
+ls 
+jobs 
+bg 2 
+jobs 
+fg 2 

@@ -302,6 +302,7 @@ void printLs(char path[], int a, int l, int printName) {
 
 void ls(char args[]) {
 
+
     int tokens;
 
     char tokenizedInput[MAX_TOKENS][MAX_TOKEN_SIZE];

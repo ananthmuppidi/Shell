@@ -1,20 +1,14 @@
-#include "../Headers/autocomplete.h"
-#include "../Headers/tokenizer.h"
-#include <string.h>
-#include <stdio.h>
-#include "../Headers/ls.h"
-#include "../Headers/sizes.h"
-#include "../Headers/dir.h"
-#include "../Headers/tokenizer.h"
-#include <dirent.h>
-#include <sys/stat.h>
-#include "../Headers/helpers.h"
-#include <pwd.h>
-#include <time.h>
-#include <libgen.h>
-#include <grp.h>
-#include "../Headers/prompt.h"
-#include <errno.h>
+#include "../Headers/root.h"
+
+
+int compare (const void * a, const void * b) {
+    size_t fa = strlen((const char *)a);
+    size_t fb = strlen((const char *)b);
+    return (fa > fb) - (fa < fb);
+}
+
+
+
 
 void autoComplete(char command[], int len)
 {
@@ -152,7 +146,7 @@ void autoComplete(char command[], int len)
         {
             command[iterator++] = matchedOptions[0][j];
         }
-         command[iterator] = '\0';
+        command[iterator] = '\0';
         int tempIdx = 0;
         while(temp[tempIdx] == command[tempIdx]){
             tempIdx++;
@@ -173,8 +167,25 @@ void autoComplete(char command[], int len)
         for(int i = 0; i < matches; i++ ){
             printf("%s\n", matchedOptions[i]);
         }
+
+        char c;
+        char matched[1000];
+        int index = 0;
+        strcpy(matched, "");
+        qsort(matchedOptions, matches, 1000, compare);
+        // for(int i = 0; i < strlen(matchedOptions[0]); i++){
+        //     for(int j = 0;j < matches; j++){
+        //         if(matchedOptions[j][i] != matchedOptions[0][1]) break;
+        //     }
+        //     matched[index++] = matchedOptions[0][i];
+        // }   
+
+        // printf("%s\n", matched);
+
         promptUser();
         printf("%s", command);
+        
+
     }
 
     promptUser();

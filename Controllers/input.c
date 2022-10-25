@@ -24,6 +24,7 @@ void enableRawMode() {
 
 void getInput(char buffer[]) {
     strcpy(buffer, "");
+ 
 
     char *inp = malloc(sizeof(char) * MAX_COMMAND_SIZE);
     char c;
@@ -48,6 +49,8 @@ void getInput(char buffer[]) {
                 }
             } else {
                 autoComplete(inp, pt);
+                pt = strlen(inp);
+                
             }
         } else if (c != 10) {
             inp[pt++] = c;

@@ -57,8 +57,9 @@ int checkBackground(char command[])
     return 0;
 }
 
-int execute(char *command, job jobPool[])
+int execute(char *command)
 {
+
 
     char commandCopy[MAX_COMMAND_SIZE];
     strcpy(commandCopy, command);

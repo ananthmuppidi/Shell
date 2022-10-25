@@ -3,7 +3,7 @@
 
 #include "job.h"
 
-int execute(char command[], job jobPool[]);
+int execute(char command[]);
 int checkBackground(char command[]);
 
 #endif
