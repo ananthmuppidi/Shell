@@ -56,7 +56,7 @@
 #include "jobHandler.h"
 #include "tokenizer.h"
 #include "prompt.h"
-#include "ls.h"
+#include "autocomplete.h"
 
 
 

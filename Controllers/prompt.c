@@ -18,18 +18,18 @@ void promptUser() {
     strcat(prompt, "@");
     strcat(prompt, hostname);
     strcat(prompt, ":");
+    strcat(prompt, "[");
     strcat(prompt, currDir);
+    strcat(prompt, "]");
 
     if (timeTaken > 1.0) {
         int catTime = (int) timeTaken;
         char append[1000];
-        sprintf(append, "took %ds", catTime);
+        sprintf(append, "[took %ds]", catTime);
         timeTaken = 0.0;
         strcat(prompt, append);
     }
-    strcat(prompt, "> ");
-
-
+    strcat(prompt, "$ ");
     printf("\r%s", prompt);
 
 }
@@ -53,7 +53,7 @@ void getPrompt(char buffer[]) {
     strcat(prompt, hostname);
     strcat(prompt, ":");
     strcat(prompt, currDir);
-    strcat(prompt, "> ");
+    strcat(prompt, "$ ");
 
     strcpy(buffer, prompt);
 

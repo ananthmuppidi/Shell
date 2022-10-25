@@ -20,7 +20,6 @@ void initializeConstants() {
     strcpy(previousDirectory, "");
 
     timeTaken = 0.0;
-
     currentForeground = -1;
 
 }

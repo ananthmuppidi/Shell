@@ -59,13 +59,12 @@ void handleSigStp()
             printf("Too many background processed to push current process to background");
             return;
         }
-        printf("Handing SIGTSTP, with pid: %d\n", currentForeground);
         setpgid(currentForeground, 0);
         kill(currentForeground, SIGTSTP);
         insertJob(jobPool, currentForegroundName, currentForeground);
         tcsetpgrp(0, shellPid);
-        printf("%d", countProcesses(jobPool));
         currentForeground = -1;
+        strcpy(currentForegroundName, "");
         printf("\n");
     }
     return;

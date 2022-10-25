@@ -35,6 +35,7 @@ void fg(char command[]) {
         strcpy(currentForegroundName, jobPool[idx - 1].name);
         currentForeground = jobPool[idx - 1].pid;
         
+        startTime = time(0);
         kill(jobPool[idx - 1].pid, SIGCONT);
         
 
@@ -61,6 +62,8 @@ void fg(char command[]) {
         tcsetpgrp(0, shellPid);
         signal(SIGTTIN, SIG_DFL);
         signal(SIGTTOU, SIG_DFL);
+        endTime = time(0);
+        timeTaken = endTime - startTime;
         return;
 
     }

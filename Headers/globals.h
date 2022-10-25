@@ -3,6 +3,7 @@
 
 #include "job.h"
 #include "jobHandler.h"
+#include <time.h>
 
 char *shellRootPath;
 job* jobPool;
@@ -13,6 +14,8 @@ pid_t shellPid;
 char *currentForegroundName;
 pid_t errPid;
 int err;
+time_t startTime;
+time_t endTime;
 
 void initializeConstants();
 

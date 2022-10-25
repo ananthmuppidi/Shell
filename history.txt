@@ -1,20 +1,20 @@
+gedit& 
+ls 
+clrar 
+clear 
+jobs 
+fg 4 
+jobs 
+clear 
+ls 
+clear 
+jobs 
+fg 4 
+sig 1 9 
+clear 
 ls 
 clear 
 ls 
 clear 
-ls 
-echo test test test lslsl 
-clear 
-ls 
-clear 
-ls 
-clea 
-clear 
-mode 
-clear 
-sysingo 
-sysinfo 
-clear 
-ls 
-clear 
-ls -al 
+jobs 
+sig 2 9 

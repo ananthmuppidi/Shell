@@ -1,5 +1,4 @@
 #include "../Headers/root.h"
-
 void constructArguments(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], char *args[MAX_TOKENS], int numArgs) {
     for (int i = 0; i < numArgs; i++) {
         args[i] = tokenizedCommand[i];
@@ -29,15 +28,17 @@ int executeForeground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
         strcpy(currentForegroundName, tokenizedCommand[0]);
         int status;
 
-        time_t begin = time(0);
+        startTime = time(0);
 
         waitpid(pid, &status, WUNTRACED);
 
         currentForeground = -1;
 
-        time_t end = time(0);
+        endTime = time(0);
 
-        timeTaken = (end - begin);
+        timeTaken = (endTime - startTime);
+        startTime = 0;
+        endTime = 0;
         strcpy(currentForegroundName, "");
     }
 
