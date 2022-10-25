@@ -26,6 +26,7 @@ int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
     if (pid == 0)
     {
         // Execute the command in the child process
+        setpgid(0,0);
         if (countProcesses(jobPool) >= MAX_JOBS)
         {
             printf("\nshell: job pool is full, cannot run background command.");
@@ -44,10 +45,10 @@ int executeBackground(char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE], int num
             // fflush(stdout);
             // exit(1);
             printf("shell: command not found: %s\n", tokenizedCommand[0]);
-            exit(0);
+            err = 1;
+            exit(12);
         }
 
-        printf("pid : %d\n", pid);
 
     }
     else

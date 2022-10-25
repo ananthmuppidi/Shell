@@ -34,6 +34,8 @@ void fg(char command[]) {
 
         strcpy(currentForegroundName, jobPool[idx - 1].name);
         currentForeground = jobPool[idx - 1].pid;
+
+        
         
         startTime = time(0);
         kill(jobPool[idx - 1].pid, SIGCONT);
@@ -52,7 +54,6 @@ void fg(char command[]) {
         
        
         int status;
-        removeJob(jobPool, currentForeground, status,  currentForegroundName);
 
     
         waitpid(currentForeground, &status, WUNTRACED);

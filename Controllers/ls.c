@@ -103,10 +103,10 @@ void printLsInfo(char path[], int hardLinks, int userSize, int groupSize, int st
                         for (int i = 0; i < spaces; i++) {
                             printf(" ");
                         }
-                        printf("%lu ", stats.st_nlink);
+                        printf("%u ", stats.st_nlink);
 
                     } else {
-                        printf("%lu ", stats.st_nlink);
+                        printf("%u ", stats.st_nlink);
                     }
 
                     struct group *gid;
