@@ -1,11 +1,4 @@
-#include "../Headers/pinfo.h"
-#include "../Headers/sizes.h"
-#include "../Headers/globals.h"
-#include "../Headers/tokenizer.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "../Headers/root.h"
 void pinfo(char command[])
 {
 

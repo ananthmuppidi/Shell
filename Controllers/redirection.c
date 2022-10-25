@@ -1,16 +1,4 @@
-#include "../Headers/redirection.h"
-#include "../Headers/sizes.h"
-#include "../Headers/tokenizer.h"
-#include "../Headers/globals.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "../Headers/dir.h"
-#include <fcntl.h>
-#include <unistd.h>
-#include "../Headers/execute.h"
 #include "../Headers/root.h"
-
 void redirection(char input[][MAX_TOKEN_SIZE], int tokens) {
 
     int flag_inp = 0; // input redirection (<) file is next to this input symbol to the right

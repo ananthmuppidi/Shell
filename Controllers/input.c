@@ -1,15 +1,4 @@
-#include "../Headers/input.h"
-#include <string.h>
-#include "../Headers/history.h"
-#include <stdio.h>
-#include "../Headers/globals.h"
-#include <termios.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <ctype.h>
-#include "../Headers/prompt.h"
 #include "../Headers/root.h"
-#include "../Headers/autocomplete.h"
 
 void die(const char *s) {
     perror(s);

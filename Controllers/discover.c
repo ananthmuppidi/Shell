@@ -1,20 +1,4 @@
-#include <stdio.h>
-#include "../Headers/ls.h"
-#include "../Headers/sizes.h"
-#include "../Headers/dir.h"
-#include "../Headers/tokenizer.h"
-#include <string.h>
-#include <stdio.h>
-#include <dirent.h>
-#include "../Headers/sizes.h"
-#include <sys/stat.h>
-#include "../Headers/helpers.h"
-#include <pwd.h>
-#include <time.h>
-#include <libgen.h>
-#include <grp.h>
-#include "../Headers/discover.h"
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 // ASSUMES THAT THE TARGET (the entity being searched for) IS ALWAYS A FILE
 // PRINT THE SEARCH DIR (only when either -d or no flag)

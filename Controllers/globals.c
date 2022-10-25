@@ -1,14 +1,4 @@
-#include "../Headers/globals.h"
-#include "../Headers/sizes.h"
-#include "../Headers/globals.h"
-#include "../Headers/history.h"
-#include "../Headers/dir.h"
-#include "../Headers/job.h"
-#include "../Headers/jobHandler.h"
-#include "../Headers/dir.h"
-
-#include <stdlib.h>
-#include <string.h>
+#include "../Headers/root.h"
 
 void initializeConstants() {
 

@@ -1,18 +1,4 @@
-#include "../Headers/ls.h"
-#include "../Headers/sizes.h"
-#include "../Headers/dir.h"
-#include "../Headers/tokenizer.h"
-#include <string.h>
-#include <stdio.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include "../Headers/helpers.h"
-#include <pwd.h>
-#include <time.h>
-#include <libgen.h>
-#include <grp.h>
-#include <errno.h>
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 
 // ASSUPTION: USED used listxattr which is not POSIX compliant but does run on OSX and Limux distros

@@ -1,8 +1,5 @@
-#include "../Headers/tokenizer.h"
-#include <string.h>
-#include "../Headers/sizes.h"
-#include <stdio.h>
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
+
 
 
 int tokenizeSpace(char input[], char output[][MAX_TOKEN_SIZE]) {

@@ -1,15 +1,4 @@
-#include "../Headers/pipes.h"
-#include "../Headers/tokenizer.h"
-#include "../Headers/globals.h"
-#include "../Headers/execute.h"
-
-#include <sys/types.h>
-#include <sys/wait.h>
-
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "../Headers/root.h"
 
 void pipes(char tokenizedCommand[][MAX_TOKEN_SIZE], int tokens)
 {

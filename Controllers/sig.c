@@ -1,15 +1,4 @@
-#include "../Headers/sig.h"
-#include <stdio.h>
-#include "../Headers/childHandler.h"
-#include <signal.h>
-#include <stdlib.h>
-#include "../Headers/jobHandler.h"
-
-#include "../Headers/globals.h"
-#include "../Headers/tokenizer.h"
-
-#include "../Headers/globals.h"
-#include "../Headers/sizes.h"
+#include "../Headers/root.h"
 
 
 

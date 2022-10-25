@@ -1,11 +1,4 @@
-#include "../Headers/job.h"
-#include "../Headers/jobHandler.h"
-#include "../Headers/sizes.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "../Headers/prompt.h"
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 
 void initializeJobPool(job jobPool[]) {

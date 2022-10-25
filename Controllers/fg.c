@@ -1,21 +1,4 @@
-#include "../Headers/fg.h"
-#include "../Headers/sig.h"
-#include <stdio.h>
-#include "../Headers/childHandler.h"
-#include <signal.h>
-#include <stdlib.h>
-#include "../Headers/jobHandler.h"
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <string.h>
-
-
-#include "../Headers/globals.h"
-#include "../Headers/tokenizer.h"
-#include "stdlib.h"
-
-#include "../Headers/globals.h"
-#include "../Headers/sizes.h"
+#include "../Headers/root.h"
 
 void fg(char command[]) {
 

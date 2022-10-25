@@ -1,14 +1,4 @@
-#include "../Headers/childHandler.h"
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include "../Headers/jobHandler.h"
-#include "../Headers/prompt.h"
-#include <sys/wait.h>
-
-#include "../Headers/globals.h"
-#include "../Headers/sizes.h"
+#include "../Headers/root.h"
 
 void childHandler()
 {

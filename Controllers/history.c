@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include "../Headers/history.h"
-#include "../Headers/sizes.h"
-#include "../Headers/tokenizer.h"
-#include <string.h>
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 int countLines(char path[]) {
 

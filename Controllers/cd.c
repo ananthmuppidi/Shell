@@ -1,11 +1,4 @@
-#include "../Headers/cd.h"
-#include "../Headers/dir.h"
-#include "../Headers/sizes.h"
-#include <string.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <errno.h>
-
+#include "../Headers/root.h"
 
 void changeDirectory(char path[]) {
     int chDirReturn = 0;

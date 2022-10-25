@@ -1,8 +1,4 @@
-#include "../Headers/echo.h"
-#include "../Headers/tokenizer.h"
-#include <stdio.h>
-#include "../Headers/globals.h"
-
+#include "../Headers/root.h"
 void echo(char args[]){
 
     char tokenizedCommand[MAX_TOKENS][MAX_TOKEN_SIZE];

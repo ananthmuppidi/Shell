@@ -1,9 +1,4 @@
-#include "../Headers/dir.h"
-#include "../Headers/sizes.h"
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 void getShellRoot(char buffer[]) {
     char shellRootPath[MAX_PATH_SIZE];

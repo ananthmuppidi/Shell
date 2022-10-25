@@ -1,0 +1,20 @@
+ls 
+clear 
+ls 
+clear 
+ls 
+echo test test test lslsl 
+clear 
+ls 
+clear 
+ls 
+clea 
+clear 
+mode 
+clear 
+sysingo 
+sysinfo 
+clear 
+ls 
+clear 
+ls -al 

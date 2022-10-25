@@ -1,11 +1,4 @@
-#include "../Headers/dir.h"
-#include "../Headers/sizes.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <pwd.h>
-#include <string.h>
-#include <assert.h>
-#include "../Headers/globals.h"
+#include "../Headers/root.h"
 
 
 void promptUser() {

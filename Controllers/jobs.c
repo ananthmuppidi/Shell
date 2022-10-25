@@ -1,10 +1,4 @@
-#include "../Headers/jobs.h"
-#include "../Headers/globals.h"
-#include "../Headers/sizes.h"
-#include "../Headers/tokenizer.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "../Headers/root.h"
 
 int getFlagsW(char input[], int *r, int *s) {
 
