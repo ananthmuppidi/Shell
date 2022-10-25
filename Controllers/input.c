@@ -47,7 +47,10 @@ void getInput(char buffer[]) {
 
     while (read(STDIN_FILENO, &c, 1) == 1) {
 
-        if (c == 4) exit(0);
+        if (c == 4){
+            printf("Exiting terminal\n");
+            exit(0);
+        }
         if (c == 9 || c == 127) {
             if (c == 127) {
                 if(pt > 0){

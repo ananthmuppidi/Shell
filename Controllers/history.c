@@ -63,12 +63,12 @@ int lastCommandSame(char command[], char path[]) {
     char lastCommand[MAX_COMMAND_SIZE];
 
     int lines = countLines(path);
+    if(!lines) return 0;
     for (int i = 0; i < lines; i++) {
         fgets(lastCommand, MAX_COMMAND_SIZE, fd);
     }
 
     lastCommand[strcspn(lastCommand, "\n")] = 0;
-
     return !strcmp(lastCommand, command);
 }
 
@@ -106,7 +106,7 @@ void printHistory(  ) {
 
 
 void addToHistory(char command[]) {
-
+    
     sanitizeCommand(command);
 
     char tokenizedInput[MAX_TOKENS][MAX_TOKEN_SIZE];
@@ -138,6 +138,7 @@ void addToHistory(char command[]) {
             printf("Error reading history file\n");
             return;
         }
+        
         fprintf(fd, "%s\n", command);
         fclose(fd);
         return;
