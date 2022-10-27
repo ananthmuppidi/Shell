@@ -34,8 +34,10 @@ void getInput(char buffer[]) {
 
     memset(inp, '\0', MAX_COMMAND_SIZE);
     int pt = 0;
+    pt = strlen(inp);
 
     while (read(STDIN_FILENO, &c, 1) == 1) {
+        pt = strlen(inp);
 
         if (c == 4){
             printf("Exiting terminal\n");
@@ -49,7 +51,16 @@ void getInput(char buffer[]) {
                 }
             } else {
                 autoComplete(inp, pt);
-                pt = strlen(inp);
+                
+
+                
+                if(autocompleted == 1){
+                    autocompleted = 0;
+                    printf("%s", inp);
+                    fflush(stdout);
+                }
+                
+
                 
             }
         } else if (c != 10) {

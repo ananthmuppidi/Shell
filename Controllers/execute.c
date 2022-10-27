@@ -91,6 +91,10 @@ int execute(char *command)
             return 0;
         }
 
+        if(tokens < 2){
+            printf("cd : no argument passed\n");
+            return 0;
+        }
         if (tokenizedCommand[1][0] == '-')
         {
             if (!strcasecmp(previousDirectory, ""))

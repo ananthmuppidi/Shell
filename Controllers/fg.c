@@ -44,7 +44,7 @@ void fg(char command[]) {
         if (tcsetpgrp(0, getpgid(jobPool[idx - 1].pid))) {
             signal(SIGTTIN, SIG_DFL);
             signal(SIGTTOU, SIG_DFL);
-            printf("fg: error: failed to get to foreground since terminal control denied");
+            printf("fg: error: failed to get to foreground since terminal control denied\n");
             fflush(stdout);
             return;
         }

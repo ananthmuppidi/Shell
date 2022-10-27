@@ -69,10 +69,16 @@ void autoComplete(char command[], int len)
         {
             lastCommand[i] = temp[strlen(temp) - 1 - i];
         }
+
+        if(!strlen(lastCommand)){
+            return;
+        }
+        
     }
     else
     {
         promptUser();
+
         return;
     }
 
@@ -126,6 +132,9 @@ void autoComplete(char command[], int len)
             sprintf(matchedOptions[matches++], "%s", options[i]);
         }
     }
+    if(matches == 0){
+        return;
+    }
     if (matches == 1)
     {
     
@@ -164,6 +173,7 @@ void autoComplete(char command[], int len)
     else if(matches > 1)
     {
         printf("\n");
+	qsort(matchedOptions, matches, 1000, compare);
         for(int i = 0; i < matches; i++ ){
             printf("%s\n", matchedOptions[i]);
         }
@@ -171,21 +181,51 @@ void autoComplete(char command[], int len)
         char c;
         char matched[1000];
         int index = 0;
-        strcpy(matched, "");
-        qsort(matchedOptions, matches, 1000, compare);
-        // for(int i = 0; i < strlen(matchedOptions[0]); i++){
-        //     for(int j = 0;j < matches; j++){
-        //         if(matchedOptions[j][i] != matchedOptions[0][1]) break;
-        //     }
-        //     matched[index++] = matchedOptions[0][i];
-        // }   
+        memset(matched, 1000, '\0');
 
-        // printf("%s\n", matched);
+
+	int flag = 0;
+        
+       	for(int i = 0; i < strlen(matchedOptions[0]); i++){
+		c = matchedOptions[0][i];
+		for(int j = 0; j < matches; j++){
+			if(matchedOptions[j][i] != c){
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0){
+			matched[index++] = c;
+		}
+	}
+	matched[index] = '\0';
+    int iterator = 0;
+
+        while (command[iterator++] != '\0'){}
+        while (command[--iterator] != ' '){}
+        iterator++;
+        // now we are at the part that we need to autocomplete
+
+        int iterator2 = 0;
+        while(command[iterator] == matched[iterator2]){
+            iterator++;
+            iterator2++;
+        }
+
+        while(matched[iterator2] != '\0'){
+            command[iterator++] = matched[iterator2++];
+        }
+        command[iterator] = '\0';
+       
+
+    
+    
+
 
         promptUser();
-        printf("%s", command);
-        
-
+        fflush(stdout);
+        autocompleted = 1;
+ 
     }
 
     promptUser();

@@ -12,7 +12,7 @@ int exists(const char *fname)
 }
 
 int inJobPool(pid_t pid){
-    for(int i = 1; i < MAX_JOBS; i++){
+    for(int i = 0; i < MAX_JOBS; i++){
         if(pid == jobPool[i].pid){
             return 1;
         }
