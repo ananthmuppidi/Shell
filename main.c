@@ -14,9 +14,6 @@
 #include <string.h>
 
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
-
 int main() {
 
     initializeConstants();
@@ -41,5 +38,3 @@ int main() {
 }
 
 
-
-#pragma clang diagnostic pop
